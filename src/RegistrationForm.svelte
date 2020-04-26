@@ -1,6 +1,6 @@
 <style>
 label {text-align: right; font-size:.8em;}
-input, button, select, textarea {
+input, button {
 	font-family: inherit;
 	font-size: inherit;
 	padding: 0.4em;
@@ -41,5 +41,5 @@ function handleEmailChange() {
 <h3>Create a New Account</h3> 
     <div><label>Email:</label><br /><input on:change={handleEmailChange} type="text" bind:value={email} /></div>
     <div><label>Password:</label><br /><input type="password" bind:value={password} /></div>
-    <div style="height:100px"><button type="button" id="registration-button">Register</button><span class="loginlink">Already Registered?<br /><a href="#">Log in</a></span></div>
+    <div style="height:100px"><button type="button" id="registration-button">Register</button><span class="loginlink">Already Registered?<br /><a href="javascript:void(0)">Log in</a></span></div>
 </div>
