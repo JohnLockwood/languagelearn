@@ -19,18 +19,36 @@
 </style>
 
 <script>
-    let email = "";
+    import Amplify, { Auth } from 'aws-amplify';
+    import awsconfig from './aws-exports';
+    Amplify.configure(awsconfig);
+    
+    let username = "";
     let password = "";
+    let user = null;
 
     function handleEmailChange() {
         console.log(email);
     }
+
+    async function handleSignup() {
+    try {
+        user = await Auth.signUp({
+            username,
+            password
+        });
+        console.log({ user });
+    } catch (error) {
+        console.log('error signing up:', error);
+    }
+}
+
 </script>
 
 <div id="registration-form">
     <div><h1>Create a New Account</h1></div>
-    <label class="label is-small">Email:</label><input class="input is-small" on:change={handleEmailChange} type="text" bind:value={email} />
+    <label class="label is-small">Email:</label><input class="input is-small" on:change={handleEmailChange} type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
-    <div class="button-section"><button type="button" class="button is-primary">Register</button><span
+    <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Register</button><span
             class="loginlink">Already Registered?<br /><a href="javascript:void(0)">Log in</a></span></div>
     </div>
