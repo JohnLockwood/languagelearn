@@ -20,8 +20,8 @@
 
 <script>
     import Amplify, { Auth } from 'aws-amplify';
-    //import awsconfig from './aws-exports';
-    Amplify.configure();
+    import awsconfig from './aws-exports';
+    Amplify.configure(aws-config);
     
     let username = "";
     let password = "";
