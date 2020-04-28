@@ -33,7 +33,7 @@
             username,
             password
         });
-        console.log(`User object: ${ user }`);
+        console.log(`User: ${ user }`);
     } catch (error) {
         console.log('error signing up:', error);
     }
