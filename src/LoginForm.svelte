@@ -1,10 +1,4 @@
 <style>
-    #registration-form {
-        width: 300px;
-        margin: 0px auto;
-        padding-top: 1em;
-    }
-
 
     .button-section {
         margin-top:.4em;
@@ -36,8 +30,8 @@
 </script>
 
 <div id="registration-form">
-    <div><h1>Create a New Account</h1></div>
+    <div><h1>Log In</h1></div>
     <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
-    <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Register</button></div>
+    <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Log In</button></div>
     </div>

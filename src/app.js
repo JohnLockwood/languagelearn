@@ -1,7 +1,8 @@
-import TestDiv from './RegistrationForm.svelte';
+import AuthTabset from './AuthTabset.svelte'
+import RegistrationForm from './RegistrationForm.svelte';
 
 import { Auth } from 'aws-amplify';
 
-var testDiv = new TestDiv({
-  target: document.getElementById("registration")
+var regForm = new AuthTabset({
+  target: document.getElementById("authenticate")
 });

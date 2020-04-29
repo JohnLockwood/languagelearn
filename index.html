@@ -10,30 +10,29 @@
             .title {color:white;}
             .subtitle {color: whitesmoke;}
             .app { width: 100%; }
-            .app-header { color: white; text-align: left; background: linear-gradient(30deg, #f90 55%, #FFC300); width: 100%; margin: 0 0 1em 0; padding: .25em .5em 1em 1em; box-shadow: 1px 2px 4px rgba(0, 0, 0, .3); }
+            .app-header { color: white; text-align: left; background: linear-gradient(30deg,#008144 55%, #00A166); width: 100%; margin: 0 0 0 0; padding: .25em .5em 1em 1em; box-shadow: 1px 2px 4px rgba(0, 0, 0, .3); }
             .app-logo { width: 126px; margin: 0 auto; }
-            .app-body { width: 800px; margin: 0 auto; text-align:left;}
-           
+            .app-body { width: 95%; margin:0px auto; padding-top:1em; margin: 0 auto; text-align:left;}       
+            .column h1 {font-size: xx-large;}
         </style>
     </head>
     <body>
         <div class="app">
             <div class="app-header">
-                <h3 class="title is-3">LanguageLearn.pro</h3>
-                <h6 class="subtitle is-6">Find language partners and share examples, FREE.</h6>
+                <h1 class="title is-3">LanguageLearn.pro</h1>
+    
             </div>
-            <div class="app-body">
-                <div class="tabs is-boxed">
-                    <ul>
-                        <li class="is-active"><a>New Users - Register</a></li>
-                        <li><a>Existing Users - Login</a></li>
-                    </ul>
+            <div class="app-body columns">
+               <div class="column">
+                <h1>Cool Marketing Fluff</h1>
+                <ul>
+                    <li>Find Language Partners</li>
+                    <li>Marry Them</li>
+                    <li>Yet another chat demo</li>
+                </ul>
                 </div>
-                    <div>
-                        <section class="tab-content"><div id="registration"></div></section>
-                        <section class="tab-content"><h3>Todo write me</h3></section>
-                   </div>
-                </div>
+               <div id="authenticate" class="column"></div>
+            </div>
             </div>
         </div>
         <script src="main.bundle.js"></script>
