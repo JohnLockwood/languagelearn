@@ -1,6 +1,6 @@
 <style>
-    #registration-form {
-        width: 300px;
+    .half-form {
+        width: 80%;
         margin: 0px auto;
         padding-top: 1em;
     }
@@ -35,7 +35,7 @@
 
 </script>
 
-<div id="registration-form">
+<div class="half-form">
     <div><h1>Create a New Account</h1></div>
     <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
