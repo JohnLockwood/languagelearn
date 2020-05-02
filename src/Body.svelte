@@ -8,8 +8,12 @@ import router from "page"
 
 let page
 let params
+let user = null;
+function handleUserLogon(event) {
+    alert(`Logged in! : ${JSON.stringify(event.detail.user)}`);
+}
 
-router("/", () => page = HomeGuest );
+router("/", () => {page = HomeGuest; } );
 router("/about", () => page = About );
 router.start();
 
@@ -21,5 +25,5 @@ router.start();
         <a class="navbar-item" href="/">Home</a>
         <a class="navbar-item" href="/about">About</a>
     </div>   
-    <svelte:component this={page} params={params} />    
+    <svelte:component this={page} on:logon={handleUserLogon} />    
 </div>

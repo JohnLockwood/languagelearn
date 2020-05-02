@@ -24,5 +24,5 @@ function login() {activate(LOGIN);}
 </div>
 <div>
     {#if activeTab == REGISTER}<section class="tab-content"><RegistrationForm /></section>
-    {:else}<section class="tab-content"><LoginForm /></section>{/if}
+    {:else}<section class="tab-content"><LoginForm on:logon /></section>{/if}
 </div>

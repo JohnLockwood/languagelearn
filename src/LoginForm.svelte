@@ -13,8 +13,12 @@
 
 <script>
     import Amplify, { Auth } from 'aws-amplify';
+    
+    import { createEventDispatcher } from 'svelte';
     import awsconfig from './aws-exports';
+    
     Amplify.configure(awsconfig);
+    const dispatch = createEventDispatcher();
     
     let username = "";
     let password = "";
@@ -22,11 +26,11 @@
 
     async function handleSignup() {
     try {
-        user = await Auth.signUp({
+        user = await Auth.signIn({
             username,
             password
         });
-        console.log(`User: ${ user }`);
+        dispatch('logon', {'user': user});
     } catch (error) {
         console.log('error signing up:', error);
     }

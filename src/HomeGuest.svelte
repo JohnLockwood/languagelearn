@@ -12,6 +12,6 @@ import Authenticate from './AuthTabset.svelte'
         </ul>
         </div>
     <div id="authenticate" class="column">
-        <Authenticate />
+        <Authenticate on:logon />
     </div>
 </div>
