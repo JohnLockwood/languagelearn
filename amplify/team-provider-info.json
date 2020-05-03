@@ -21,6 +21,12 @@
             },
             "auth": {
                 "languagelearn6919f14c": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dc92gzvp0zb9i",
+                    "type": "cicd"
+                }
             }
         }
     }
