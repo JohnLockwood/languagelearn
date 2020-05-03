@@ -3,9 +3,9 @@
     "modules": [
         "verification-link"
     ],
-    "parentResource": "languagelearna1bd7c37",
-    "functionName": "languagelearna1bd7c37CustomMessage",
-    "resourceName": "languagelearna1bd7c37CustomMessage",
+    "parentResource": "languagelearn6919f14c",
+    "functionName": "languagelearn6919f14cCustomMessage",
+    "resourceName": "languagelearn6919f14cCustomMessage",
     "parentStack": "auth",
     "triggerEnvs": [
         {
@@ -15,10 +15,10 @@
     ],
     "triggerDir": "C:\\Users\\CodeS\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\utils/../triggers/CustomMessage",
     "triggerTemplate": "CustomMessage.json.ejs",
-    "roleName": "languagelearna1bd7c37CustomMessage",
+    "roleName": "languagelearn6919f14cCustomMessage",
     "skipEdit": true,
-    "REDIRECTURL": "",
-    "EMAILSUBJECT": "",
-    "EMAILMESSAGE": "",
+    "REDIRECTURL": "/registered",
+    "EMAILSUBJECT": "LanguageLearn - Confirm Your Email",
+    "EMAILMESSAGE": "Please paste the link that follows into your browser.",
     "RESOURCENAME": "resourceName"
 }

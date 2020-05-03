@@ -11,28 +11,24 @@ Parameters:
   
   
   
-  functionlanguagelearna1bd7c37CustomMessageArn: 
+  functionlanguagelearn6919f14cCustomMessageArn: 
     Type: String
-    Default: functionlanguagelearna1bd7c37CustomMessageArn
+    Default: functionlanguagelearn6919f14cCustomMessageArn
   
-  functionlanguagelearna1bd7c37CustomMessageName: 
+  functionlanguagelearn6919f14cCustomMessageName: 
     Type: String
-    Default: functionlanguagelearna1bd7c37CustomMessageName
-  
-  
-  
-  functionlanguagelearna1bd7c37PostConfirmationArn: 
-    Type: String
-    Default: functionlanguagelearna1bd7c37PostConfirmationArn
-  
-  functionlanguagelearna1bd7c37PostConfirmationName: 
-    Type: String
-    Default: functionlanguagelearna1bd7c37PostConfirmationName
+    Default: functionlanguagelearn6919f14cCustomMessageName
   
   
   
 
     
+  identityPoolName:
+    Type: String
+                
+  allowUnauthenticatedIdentities:
+    Type: String
+            
   resourceNameTruncated:
     Type: String
               
@@ -98,16 +94,13 @@ Parameters:
                                       
   useDefault:
     Type: String
-                      
-  #usernameAttributes:
-  #  Type: CommaDelimitedList
-      
+              
   triggers:
     Type: String
                       
   userPoolGroupList:
     Type: CommaDelimitedList
-      
+                  
   verificationBucketName:
     Type: String
                     
@@ -119,16 +112,7 @@ Parameters:
               
   dependsOn:
     Type: CommaDelimitedList
-        
-  userPoolGroups:
-    Type: String
-              
-  adminQueries:
-    Type: String
-              
-  hostedUI:
-    Type: String
-                      
+    
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -161,7 +145,7 @@ Resources:
   # Created to allow the UserPool SMS Config to publish via the Simple Notification Service during MFA Process
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !If [ShouldNotCreateEnvResources, 'languaa1bd7c37_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
+      RoleName: !If [ShouldNotCreateEnvResources, 'langua6919f14c_sns-role', !Join ['',[ 'sns', !Select [3, !Split ['-', !Ref 'AWS::StackName']], '-', !Ref env]]]
       AssumeRolePolicyDocument: 
         Version: "2012-10-17"
         Statement: 
@@ -173,10 +157,10 @@ Resources:
               - "sts:AssumeRole"
             Condition: 
               StringEquals:
-                sts:ExternalId: languaa1bd7c37_role_external_id
+                sts:ExternalId: langua6919f14c_role_external_id
       Policies: 
         - 
-          PolicyName: languaa1bd7c37-sns-policy
+          PolicyName: langua6919f14c-sns-policy
           PolicyDocument: 
             Version: "2012-10-17"
             Statement: 
@@ -195,10 +179,7 @@ Resources:
       UserPoolName: !If [ShouldNotCreateEnvResources, !Ref userPoolName, !Join ['',[!Ref userPoolName, '-', !Ref env]]]
       
       Schema: 
-        - 
-          Name: username
-          Required: true
-          Mutable: true
+        
         -
           Name: email
           Required: true
@@ -207,8 +188,19 @@ Resources:
       
       
       LambdaConfig:
-          CustomMessage: !Ref functionlanguagelearna1bd7c37CustomMessageArn
-          PostConfirmation: !Ref functionlanguagelearna1bd7c37PostConfirmationArn
+        
+        
+          CustomMessage: !Ref functionlanguagelearn6919f14cCustomMessageArn
+        
+        
+        
+        
+        
+        
+        
+        
+      
+      
       AutoVerifiedAttributes: !Ref autoVerifiedAttributes
       
       
@@ -222,14 +214,12 @@ Resources:
           RequireNumbers: false
           RequireSymbols: false
           RequireUppercase: false
-      
-      # UsernameAttributes: !Ref usernameAttributes
           
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: languaa1bd7c37_role_external_id
+        ExternalId: langua6919f14c_role_external_id
     
   
     
@@ -240,20 +230,11 @@ Resources:
     Properties: 
       Action: "lambda:invokeFunction"
       Principal: "cognito-idp.amazonaws.com"
-      FunctionName: !Ref functionlanguagelearna1bd7c37CustomMessageName
+      FunctionName: !Ref functionlanguagelearn6919f14cCustomMessageName
       SourceArn: !GetAtt UserPool.Arn
     
   
     
-  
-  UserPoolPostConfirmationLambdaInvokePermission: 
-    Type: "AWS::Lambda::Permission"
-    DependsOn: UserPool
-    Properties: 
-      Action: "lambda:invokeFunction"
-      Principal: "cognito-idp.amazonaws.com"
-      FunctionName: !Ref functionlanguagelearna1bd7c37PostConfirmationName
-      SourceArn: !GetAtt UserPool.Arn
     
   
   
@@ -262,44 +243,12 @@ Resources:
   # Updating lambda role with permissions to Cognito
   
   
-  languagelearna1bd7c37PostConfirmationAddToGroupCognito:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyName: languagelearna1bd7c37PostConfirmationAddToGroupCognito
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Action:
-            
-              - cognito-idp:AdminAddUserToGroup
-            
-              - cognito-idp:GetGroup
-            
-              - cognito-idp:CreateGroup
-            
-            
-            
-            Resource: !GetAtt
-            
-              - UserPool
-            
-              - Arn
-            
-            
-            
-
-      Roles:
-        - !Join ['',["languagelearna1bd7c37PostConfirmation", '-', !Ref env]]
-  
-  
-  
   UserPoolClientWeb:
   # Created provide application access to user pool
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: languaa1bd7c37_app_clientWeb
+      ClientName: langua6919f14c_app_clientWeb
       
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
@@ -309,7 +258,7 @@ Resources:
   # Depends on UserPool for ID reference
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
-      ClientName: languaa1bd7c37_app_client
+      ClientName: langua6919f14c_app_client
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
@@ -374,7 +323,7 @@ Resources:
   # Marked as depending on UserPoolClientRole for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: languaa1bd7c37_userpoolclient_lambda_iam_policy
+      PolicyName: langua6919f14c_userpoolclient_lambda_iam_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -391,7 +340,7 @@ Resources:
   # Marked as depending on UserPoolClientLambdaPolicy for easier to understand CFN sequencing
     Type: 'AWS::IAM::Policy'
     Properties:
-      PolicyName: languaa1bd7c37_userpoolclient_lambda_log_policy
+      PolicyName: langua6919f14c_userpoolclient_lambda_log_policy
       Roles: 
         - !Ref UserPoolClientRole
       PolicyDocument:
@@ -424,8 +373,50 @@ Resources:
 
   
     
+  # BEGIN IDENTITY POOL RESOURCES
+  
+ 
+  IdentityPool:
+  # Always created
+    Type: AWS::Cognito::IdentityPool
+    Properties: 
+      IdentityPoolName: !If [ShouldNotCreateEnvResources, 'languagelearn6919f14c_identitypool_6919f14c', !Join ['',['languagelearn6919f14c_identitypool_6919f14c', '__', !Ref env]]]
+      
+      CognitoIdentityProviders:
+        - ClientId:  !Ref UserPoolClient
+          ProviderName: !Sub
+            - cognito-idp.${region}.amazonaws.com/${client}
+            - { region: !Ref "AWS::Region",  client: !Ref UserPool}
+        - ClientId:  !Ref UserPoolClientWeb
+          ProviderName: !Sub
+            - cognito-idp.${region}.amazonaws.com/${client}
+            - { region: !Ref "AWS::Region",  client: !Ref UserPool}
+            
+      AllowUnauthenticatedIdentities: !Ref allowUnauthenticatedIdentities
+       
+       
+    DependsOn: UserPoolClientInputs 
+    
+  
+  IdentityPoolRoleMap:
+  # Created to map Auth and Unauth roles to the identity pool
+  # Depends on Identity Pool for ID ref
+    Type: AWS::Cognito::IdentityPoolRoleAttachment
+    Properties: 
+      IdentityPoolId: !Ref IdentityPool
+      Roles:
+          unauthenticated: !Ref unauthRoleArn
+          authenticated: !Ref authRoleArn
+    DependsOn: IdentityPool
+  
 
 Outputs :
+  
+  IdentityPoolId:
+    Value: !Ref 'IdentityPool'
+    Description:  Id for the identity pool
+  IdentityPoolName:
+    Value: !GetAtt IdentityPool.Name 
   
   
   

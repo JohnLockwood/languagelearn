@@ -2,7 +2,15 @@
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "Lambda resource stack creation using Amplify CLI",
 	"Parameters": {
-		"GROUP": {
+		"REDIRECTURL": {
+			"Type": "String",
+			"Default": ""
+		},
+		"EMAILMESSAGE": {
+			"Type": "String",
+			"Default": ""
+		},
+		"EMAILSUBJECT": {
 			"Type": "String",
 			"Default": ""
 		},
@@ -61,12 +69,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"languagelearna1bd7c37PostConfirmation",
+						"languagelearn6919f14cCustomMessage",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"languagelearna1bd7c37PostConfirmation",
+									"languagelearn6919f14cCustomMessage",
 									"-",
 									{
 										"Ref": "env"
@@ -87,8 +95,17 @@
 						"REGION": {
 							"Ref": "AWS::Region"
 						},
-						"GROUP": {
-							"Ref": "GROUP"
+						"REDIRECTURL": {
+							"Ref": "REDIRECTURL"
+						},
+						"EMAILSUBJECT": {
+							"Ref": "EMAILSUBJECT"
+						},
+						"EMAILMESSAGE": {
+							"Ref": "EMAILMESSAGE"
+						},
+						"RESOURCENAME": {
+							"Ref": "resourceName"
 						}
 					}
 				},
@@ -101,8 +118,8 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-languagelearn-dev-165951-deployment",
-					"S3Key": "amplify-builds/languagelearna1bd7c37PostConfirmation-4d5530716546437a6b45-build.zip"
+					"S3Bucket": "amplify-languagelearn-dev-133003-deployment",
+					"S3Key": "amplify-builds/languagelearn6919f14cCustomMessage-4c2b54424e736b752b42-build.zip"
 				}
 			}
 		},
@@ -112,12 +129,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"languagelearna1bd7c37PostConfirmation",
+						"languagelearn6919f14cCustomMessage",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"languagelearna1bd7c37PostConfirmation",
+									"languagelearn6919f14cCustomMessage",
 									"-",
 									{
 										"Ref": "env"

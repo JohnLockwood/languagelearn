@@ -1,40 +1,26 @@
 {
-    "function": {
-        "languagelearna1bd7c37CustomMessage": {
-            "build": true,
-            "providerPlugin": "awscloudformation",
-            "service": "Lambda"
-        },
-        "languagelearna1bd7c37PostConfirmation": {
-            "build": true,
-            "providerPlugin": "awscloudformation",
-            "service": "Lambda"
-        }
-    },
-    "auth": {
-        "languagelearna1bd7c37": {
-            "service": "Cognito",
-            "providerPlugin": "awscloudformation",
-            "dependsOn": [
-                {
-                    "category": "function",
-                    "resourceName": "languagelearna1bd7c37CustomMessage",
-                    "triggerProvider": "Cognito",
-                    "attributes": [
-                        "Arn",
-                        "Name"
-                    ]
-                },
-                {
-                    "category": "function",
-                    "resourceName": "languagelearna1bd7c37PostConfirmation",
-                    "triggerProvider": "Cognito",
-                    "attributes": [
-                        "Arn",
-                        "Name"
-                    ]
-                }
-            ]
-        }
-    }
+	"function": {
+		"languagelearn6919f14cCustomMessage": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda"
+		}
+	},
+	"auth": {
+		"languagelearn6919f14c": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "languagelearn6919f14cCustomMessage",
+					"triggerProvider": "Cognito",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				}
+			]
+		}
+	}
 }

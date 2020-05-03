@@ -1,29 +1,26 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "amplify-languagelearn-dev-165951-authRole",
-            "UnauthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-165951-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-165951-authRole",
+            "AuthRoleName": "amplify-languagelearn-dev-133003-authRole",
+            "UnauthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-133003-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-133003-authRole",
             "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-languagelearn-dev-165951-deployment",
-            "UnauthRoleName": "amplify-languagelearn-dev-165951-unauthRole",
-            "StackName": "amplify-languagelearn-dev-165951",
-            "StackId": "arn:aws:cloudformation:us-east-1:363498436337:stack/amplify-languagelearn-dev-165951/e0848460-8800-11ea-9f24-0a726edfb5e3",
-            "AmplifyAppId": "d215bi34iqm2b0"
+            "DeploymentBucketName": "amplify-languagelearn-dev-133003-deployment",
+            "UnauthRoleName": "amplify-languagelearn-dev-133003-unauthRole",
+            "StackName": "amplify-languagelearn-dev-133003",
+            "StackId": "arn:aws:cloudformation:us-east-1:363498436337:stack/amplify-languagelearn-dev-133003/bab452c0-8d63-11ea-9637-12e346dd5d0c",
+            "AmplifyAppId": "dc92gzvp0zb9i"
         },
         "categories": {
             "function": {
-                "languagelearna1bd7c37CustomMessage": {
-                    "REDIRECTURL": "",
-                    "EMAILSUBJECT": "",
-                    "EMAILMESSAGE": ""
-                },
-                "languagelearna1bd7c37PostConfirmation": {
-                    "GROUP": "registered"
+                "languagelearn6919f14cCustomMessage": {
+                    "REDIRECTURL": "/registered",
+                    "EMAILSUBJECT": "LanguageLearn - Confirm Your Email",
+                    "EMAILMESSAGE": "Please paste the link that follows into your browser."
                 }
             },
             "auth": {
-                "languagelearna1bd7c37": {}
+                "languagelearn6919f14c": {}
             }
         }
     }

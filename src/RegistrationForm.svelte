@@ -18,14 +18,19 @@
     Amplify.configure(awsconfig);
     
     let username = "";
+    let email = "";
     let password = "";
+
+
     let user = null;
 
+    // username: someUsername, password: somePassword, attributes: { email: someEmail }
     async function handleSignup() {
     try {
         user = await Auth.signUp({
             username,
-            password
+            password,
+            attributes: {email: email}
         });
         console.log(`User: ${ user }`);
     } catch (error) {
@@ -35,9 +40,10 @@
 
 </script>
 
-<div class="half-form">
+<div class="half-form">    
     <div><h1>Create a New Account</h1></div>
-    <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={username} />
+    <label class="label is-small">Username:</label><input class="input is-small" type="text" bind:value={username} />
+    <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={email} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
     <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Register</button></div>
     </div>

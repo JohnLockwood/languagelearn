@@ -1,6 +1,8 @@
 {
-    "resourceNameTruncated": "languaa1bd7c37",
-    "userPoolName": "languagelearna1bd7c37_userpool_a1bd7c37",
+    "identityPoolName": "languagelearn6919f14c_identitypool_6919f14c",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "langua6919f14c",
+    "userPoolName": "languagelearn6919f14c_userpool_6919f14c",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -26,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "languaa1bd7c37_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "langua6919f14c_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "resourceName": "languagelearna1bd7c37",
-    "authSelections": "userPoolOnly",
+    "resourceName": "languagelearn6919f14c",
+    "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -42,37 +44,23 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
-    "triggers": "{\"CustomMessage\":[\"verification-link\"],\"PostConfirmation\":[\"add-to-group\"]}",
+    "useDefault": "default",
+    "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
     "userPoolGroupList": [],
-    "verificationBucketName": "languagelearna1bd7c37verificationbucket",
+    "verificationBucketName": "languagelearn6919f14cverificationbucket",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "permissions": [
-        "{\"policyName\":\"AddToGroupCognito\",\"trigger\":\"PostConfirmation\",\"effect\":\"Allow\",\"actions\":[\"cognito-idp:AdminAddUserToGroup\",\"cognito-idp:GetGroup\",\"cognito-idp:CreateGroup\"],\"resource\":{\"paramType\":\"!GetAtt\",\"keys\":[\"UserPool\",\"Arn\"]}}"
-    ],
+    "permissions": [],
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "languagelearna1bd7c37CustomMessage",
-            "triggerProvider": "Cognito",
-            "attributes": [
-                "Arn",
-                "Name"
-            ]
-        },
-        {
-            "category": "function",
-            "resourceName": "languagelearna1bd7c37PostConfirmation",
+            "resourceName": "languagelearn6919f14cCustomMessage",
             "triggerProvider": "Cognito",
             "attributes": [
                 "Arn",
                 "Name"
             ]
         }
-    ],
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "hostedUI": false
+    ]
 }
