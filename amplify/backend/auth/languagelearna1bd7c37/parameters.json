@@ -1,6 +1,4 @@
 {
-    "identityPoolName": "languagelearna1bd7c37_identitypool_a1bd7c37",
-    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "languaa1bd7c37",
     "userPoolName": "languagelearna1bd7c37_userpool_a1bd7c37",
     "autoVerifiedAttributes": [
@@ -31,7 +29,7 @@
     "userpoolClientLambdaRole": "languaa1bd7c37_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "resourceName": "languagelearna1bd7c37",
-    "authSelections": "identityPoolAndUserPool",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -44,17 +42,16 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
-    "usernameAttributes": [
-        "email"
-    ],
-    "triggers": "{\"CustomMessage\":[\"verification-link\"]}",
+    "useDefault": "manual",
+    "triggers": "{\"CustomMessage\":[\"verification-link\"],\"PostConfirmation\":[\"add-to-group\"]}",
     "userPoolGroupList": [],
     "verificationBucketName": "languagelearna1bd7c37verificationbucket",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
-    "permissions": [],
+    "permissions": [
+        "{\"policyName\":\"AddToGroupCognito\",\"trigger\":\"PostConfirmation\",\"effect\":\"Allow\",\"actions\":[\"cognito-idp:AdminAddUserToGroup\",\"cognito-idp:GetGroup\",\"cognito-idp:CreateGroup\"],\"resource\":{\"paramType\":\"!GetAtt\",\"keys\":[\"UserPool\",\"Arn\"]}}"
+    ],
     "dependsOn": [
         {
             "category": "function",
@@ -64,6 +61,18 @@
                 "Arn",
                 "Name"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "languagelearna1bd7c37PostConfirmation",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
         }
-    ]
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "hostedUI": false
 }

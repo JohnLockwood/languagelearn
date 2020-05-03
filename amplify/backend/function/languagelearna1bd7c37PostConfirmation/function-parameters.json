@@ -1,0 +1,16 @@
+{
+    "trigger": true,
+    "modules": [
+        "add-to-group"
+    ],
+    "parentResource": "languagelearna1bd7c37",
+    "functionName": "languagelearna1bd7c37PostConfirmation",
+    "resourceName": "languagelearna1bd7c37PostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": [],
+    "triggerDir": "C:\\Users\\CodeS\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\utils/../triggers/PostConfirmation",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "roleName": "languagelearna1bd7c37PostConfirmation",
+    "skipEdit": true,
+    "GROUP": "registered"
+}

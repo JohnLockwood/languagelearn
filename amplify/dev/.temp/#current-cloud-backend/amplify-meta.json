@@ -1,0 +1,38 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-languagelearn-dev-165951-authRole",
+			"UnauthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-165951-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::363498436337:role/amplify-languagelearn-dev-165951-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-languagelearn-dev-165951-deployment",
+			"UnauthRoleName": "amplify-languagelearn-dev-165951-unauthRole",
+			"StackName": "amplify-languagelearn-dev-165951",
+			"StackId": "arn:aws:cloudformation:us-east-1:363498436337:stack/amplify-languagelearn-dev-165951/e0848460-8800-11ea-9f24-0a726edfb5e3",
+			"AmplifyAppId": "d215bi34iqm2b0"
+		}
+	},
+	"function": {
+		"languagelearna1bd7c37CustomMessage": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"lastBuildTimeStamp": "2020-04-27T22:36:22.819Z",
+			"lastPackageTimeStamp": "2020-04-27T22:36:22.893Z",
+			"distZipFilename": "languagelearna1bd7c37CustomMessage-49764e5253443750576f-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-languagelearn-dev-165951-deployment/amplify-cfn-templates/function/languagelearna1bd7c37CustomMessage-cloudformation-template.json",
+				"logicalId": "functionlanguagelearna1bd7c37CustomMessage"
+			},
+			"lastPushTimeStamp": "2020-04-27T22:39:57.223Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:363498436337:function:languagelearna1bd7c37CustomMessage-dev",
+				"Name": "languagelearna1bd7c37CustomMessage-dev",
+				"LambdaExecutionRole": "languagelearna1bd7c37CustomMessage-dev"
+			},
+			"lastPushDirHash": "qsLQ3zCLzJxXBkvHXuZRQMOf7gs="
+		}
+	},
+	"auth": {}
+}

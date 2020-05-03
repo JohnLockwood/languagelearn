@@ -17,6 +17,9 @@
                     "REDIRECTURL": "",
                     "EMAILSUBJECT": "",
                     "EMAILMESSAGE": ""
+                },
+                "languagelearna1bd7c37PostConfirmation": {
+                    "GROUP": "registered"
                 }
             },
             "auth": {
