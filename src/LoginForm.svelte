@@ -40,7 +40,7 @@
 
 <div class="half-form">
     <div><h1>Log In</h1></div>
-    <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={username} />
+    <label class="label is-small">Username (case sensitive):</label><input class="input is-small" type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
     <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Log In</button></div>
     </div>
