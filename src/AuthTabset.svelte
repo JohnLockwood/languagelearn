@@ -26,7 +26,7 @@ function handleRegisterTab(event) {
 
 </script>
 
-<div>
+<div >
     {#if activeTab == REGISTER}<RegistrationForm on:registertab={handleRegisterTab} />
     {:else}<LoginForm on:logon  on:registertab={handleRegisterTab} />{/if}
 </div>

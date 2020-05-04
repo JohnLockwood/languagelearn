@@ -32,11 +32,11 @@
 
 </script>
 
-<div >
-    <div><h3>Sign In</h3></div>
+<form>
+    <h1>Sign In</h1>
     <label class="label is-small">Username (case sensitive):</label><input class="input is-small" type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
     <button type="button" on:click={handleSignup} class="button is-primary">Log In</button>
     &nbsp;&nbsp;No Account?&nbsp;&nbsp;
     <a href="/" on:click|preventDefault={() => dispatch("registertab", {"option": "register"}) }>Create Account</a>
-</div>
+</form>

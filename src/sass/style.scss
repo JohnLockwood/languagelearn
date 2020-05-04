@@ -15,11 +15,11 @@ nav {marin:0;}
 nav ul li.active { background-color: $header-link-active;}
 nav ul { margin:0; padding:0;}
 
-
 nav ul li:first-child {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 1em}
 nav ul li:not(first-child) {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 2em}
 
-nav ul li a { color: $header-color; text-decoration: none; font-weight:bold;}
+nav ul li a { color: $header-color; text-decoration: none; font-weight: bold; font-size:1.1em;}
+nav ul li a:hover {text-decoration: none;}
 html { font-family: $header-font-family}
 .title {color:white;}
 html, body { margin:0;}
@@ -27,7 +27,7 @@ html, body { margin:0;}
 .app { width: 100%; }
 header { color: $header-color; text-align: left; background-color: $header-background; width: 100%;  }
 .two-columns { display: grid; grid-template-columns: 55% 40%;}
-.one-column {display: block; position:relative;}
+.column {display: block; position:relative;margin: 1em 1em 1em 1em;}
 small { font-size: .8em;}
 label {display:block; }
 input[type=text] {width: 90%; padding:1em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;box-sizing:content-box;}

@@ -18,7 +18,7 @@ user.subscribe(value => userLocal = value);
                 <li>Yet another chat demo</li>
             </ul>
             </div>
-        <div id="authenticate" class="one-column">
+        <div id="authenticate" class="column">
             <Authenticate on:logon />
         </div>
     </div>

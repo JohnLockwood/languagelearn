@@ -29,6 +29,11 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
 }
 
 html {
@@ -63,9 +68,10 @@ header {
   grid-template-columns: 55% 40%;
 }
 
-.one-column {
+.column {
   display: block;
   position: relative;
+  margin: 1em 1em 1em 1em;
 }
 
 small {

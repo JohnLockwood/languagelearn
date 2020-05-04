@@ -35,7 +35,7 @@
 </script>
 
 <form>    
-    <h3>Register</h3>
+    <h1>Register</h1>
     <label>Username (case sensitive):</label><input  type="text" bind:value={username} />
     <label>Email:</label><input type="text" bind:value={email} />
     <label >Password:</label><input type="password" bind:value={password}/>    
