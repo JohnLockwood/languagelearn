@@ -1,7 +1,7 @@
 <style>
     .header-grid {
         display:grid;
-        grid-template-columns: 50% 30% 10% 10%;
+        grid-template-columns: 60% 30% 10%;
         padding-top:12px;
     }
 
@@ -19,17 +19,26 @@
 </style>
 
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import Amplify, { Auth } from 'aws-amplify';
+    import awsconfig from './aws-exports';
+    Amplify.configure(awsconfig);
     import { user } from './AppStore';
-    const dispatch = createEventDispatcher();
-
+    
     let userLocal = null;
 
     user.subscribe(value => userLocal = value);
 
-    function onLogout() {        
-        user.update(u => null);
+    function onLogout() {  
+        try {
+            Auth.signOut();
+            user.update(u => null);
+            console.log("Logout successful");
+        }
+        catch(error) {
+            console.log(`Error logging out, ${error}`);
+        }
     }
+    
 </script>
 <div class="app-header header-grid">
     <div>

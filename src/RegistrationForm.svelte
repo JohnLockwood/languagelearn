@@ -1,6 +1,6 @@
 <style>
     .half-form {
-        width: 80%;
+        width: 90%;
         margin: 0px auto;
         padding-top: 1em;
     }

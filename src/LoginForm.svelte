@@ -1,6 +1,6 @@
 <style>
     .half-form {
-        width: 80%;
+        width: 90%;
         margin: 0px auto;
         padding-top: 1em;
     }
@@ -32,7 +32,8 @@
             password
         });
         user.update(u => userLocal);
-        dispatch('logon', {'user': user});
+        console.log(`Logged in! : ${JSON.stringify(userLocal)}`);
+    
     } catch (error) {
         console.log('error signing up:', error);
     }
