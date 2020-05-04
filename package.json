@@ -6,7 +6,10 @@
     "@aws-amplify/api": "latest",
     "@aws-amplify/pubsub": "latest",
     "aws-amplify": "latest",
+    "css-loader": "^3.5.3",
     "page": "^1.11.6",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
     "svelte": "^3.21.0",
     "svelte-loader": "^2.13.6"
   },

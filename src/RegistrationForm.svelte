@@ -1,14 +1,5 @@
 <style>
-    .half-form {
-        width: 90%;
-        margin: 0px auto;
-        padding-top: 1em;
-    }
 
-
-    .button-section {
-        margin-top:.4em;
-    }
 
 </style>
 
@@ -16,6 +7,9 @@
     import Amplify, { Auth } from 'aws-amplify';
     import awsconfig from './aws-exports';
     Amplify.configure(awsconfig);
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
     
     let username = "";
     let email = "";
@@ -40,10 +34,12 @@
 
 </script>
 
-<div class="half-form">    
-    <div><h1>Create a New Account</h1></div>
-    <label class="label is-small">Username (case sensitive):</label><input class="input is-small" type="text" bind:value={username} />
-    <label class="label is-small">Email:</label><input class="input is-small" type="text" bind:value={email} />
-    <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
-    <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Register</button></div>
-    </div>
+<form>    
+    <h3>Register</h3>
+    <label>Username (case sensitive):</label><input  type="text" bind:value={username} />
+    <label>Email:</label><input type="text" bind:value={email} />
+    <label >Password:</label><input type="password" bind:value={password}/>    
+    <br />
+    <button type="button" on:click={handleSignup} class="button is-primary">Register</button>&nbsp;&nbsp;Have an Account?&nbsp;&nbsp;
+    <a href="/" on:click|preventDefault={() => dispatch("registertab", {"option": "sign-in"}) }>Sign in</a>
+</form>

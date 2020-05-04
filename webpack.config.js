@@ -27,7 +27,7 @@ module.exports = {
                 test: /\.(html|svelte)$/,
                 exclude: /node_modules/,
                 use: 'svelte-loader'
-            }
+            },
         ]
     },
     devServer: {
@@ -37,7 +37,7 @@ module.exports = {
         historyApiFallback: true
     },
     plugins: [
-        new CopyWebpackPlugin(['index.html']),
+        new CopyWebpackPlugin(['index.html', 'style.css']),
         new webpack.HotModuleReplacementPlugin()
     ]
 };

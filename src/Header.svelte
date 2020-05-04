@@ -1,19 +1,16 @@
 <style>
     .header-grid {
         display:grid;
-        grid-template-columns: 60% 30% 10%;
-        padding-top:12px;
+        grid-template-columns: 60% 30% 10%;        
     }
 
     .logged-in-user {
         font-weight:bold;
-        padding-top:7px;
         padding-right:1em;
         text-align:right;
     }
     .logged-in-button {
-        font-weight:bold;
-        padding-top:0px;
+        font-weight:bold;        
     }
     
 </style>
@@ -38,14 +35,23 @@
             console.log(`Error logging out, ${error}`);
         }
     }
+
+     let path = "/";
+   
+
     
 </script>
-<div class="app-header header-grid">
-    <div>
-    <h1 class="title is-3">LanguageLearn.pro</h1>
-    </div>
+<header class="header-grid">
+    <nav>
+        <ul>
+            <li class:active={path === "/"}><a href="/" on:click={() => path = "/"}>LanguageLearn.pro</a></li>
+            <li class:active={path === "/home"}><a on:click={() => path = "/home"} href="/home">Home</a></li>
+            <li class:active={path === "/about"}><a on:click={() => path = "/about"} href="/about">About</a></li>            
+            <li class:active={path === "/pricing"}><a on:click={() => path = "/pricing"} href="/pricing">Pricing</a></li>            
+        </ul>
+    </nav>
     {#if userLocal != null}
     <div class="logged-in-user">{userLocal.username}</div>
     <div class="logged-in-button"><button type="button" class="button is-link" on:click={onLogout}>Log Out</button></div>
     {/if}
-</div>
+</header>

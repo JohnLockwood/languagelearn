@@ -1,14 +1,5 @@
 <style>
-    .half-form {
-        width: 90%;
-        margin: 0px auto;
-        padding-top: 1em;
-    }
-
-    .button-section {
-        margin-top:.4em;
-    }
-
+ 
 </style>
 
 <script>
@@ -41,9 +32,11 @@
 
 </script>
 
-<div class="half-form">
-    <div><h1>Log In</h1></div>
+<div >
+    <div><h3>Sign In</h3></div>
     <label class="label is-small">Username (case sensitive):</label><input class="input is-small" type="text" bind:value={username} />
     <label class="label is-small">Password:</label><input class="input is-small" type="password" bind:value={password} />
-    <div class="button-section"><button type="button" on:click={handleSignup} class="button is-primary">Log In</button></div>
-    </div>
+    <button type="button" on:click={handleSignup} class="button is-primary">Log In</button>
+    &nbsp;&nbsp;No Account?&nbsp;&nbsp;
+    <a href="/" on:click|preventDefault={() => dispatch("registertab", {"option": "register"}) }>Create Account</a>
+</div>

@@ -1,0 +1,41 @@
+$ember-orange:  #ff9900;
+$light-orange: #ffc46d;
+$squid-ink: #232f3e;
+$gray: #828282;
+
+$header-color: white;
+
+$header-background: $squid-ink;
+$header-link-active: $ember-orange;
+
+$header-font-family: Arial, Helvetica, sans-serif;
+
+
+nav {marin:0;}
+nav ul li.active { background-color: $header-link-active;}
+nav ul { margin:0; padding:0;}
+
+
+nav ul li:first-child {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 1em}
+nav ul li:not(first-child) {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 2em}
+
+nav ul li a { color: $header-color; text-decoration: none; font-weight:bold;}
+html { font-family: $header-font-family}
+.title {color:white;}
+html, body { margin:0;}
+.subtitle {color: whitesmoke;}
+.app { width: 100%; }
+header { color: $header-color; text-align: left; background-color: $header-background; width: 100%;  }
+.two-columns { display: grid; grid-template-columns: 55% 40%;}
+.one-column {display: block; position:relative;}
+small { font-size: .8em;}
+label {display:block; }
+input[type=text] {width: 90%; padding:1em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;box-sizing:content-box;}
+input[type=password] { width: 90%; padding:1em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;}
+button {padding: .8em; border-radius: 4px; margin:0}
+
+.is-primary {font-size: 1.1em; background-color: $ember-orange; color: white; border:1px inset $light-orange;}
+form {position:relative;}
+.right {position: absolute; right:0;}
+a {color:$ember-orange; text-decoration: none;}
+a:hover {color:$light-orange; text-decoration: underline;}
