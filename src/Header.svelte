@@ -1,20 +1,3 @@
-<style>
-    .header-grid {
-        display:grid;
-        grid-template-columns: 60% 30% 10%;        
-    }
-
-    .logged-in-user {
-        font-weight:bold;
-        padding-right:1em;
-        text-align:right;
-    }
-    .logged-in-button {
-        font-weight:bold;        
-    }
-    
-</style>
-
 <script>
     import Amplify, { Auth } from 'aws-amplify';
     import awsconfig from './aws-exports';
@@ -37,21 +20,22 @@
     }
 
      let path = "/";
-   
-
     
 </script>
-<header class="header-grid">
-    <nav>
-        <ul>
-            <li class:active={path === "/"}><a href="/" on:click={() => path = "/"}>LanguageLearn.pro</a></li>
-            <li class:active={path === "/home"}><a on:click={() => path = "/home"} href="/home">Home</a></li>
-            <li class:active={path === "/about"}><a on:click={() => path = "/about"} href="/about">About</a></li>            
-            <li class:active={path === "/pricing"}><a on:click={() => path = "/pricing"} href="/pricing">Pricing</a></li>            
-        </ul>
-    </nav>
-    {#if userLocal != null}
-    <div class="logged-in-user">{userLocal.username}</div>
-    <div class="logged-in-button"><button type="button" class="button is-link" on:click={onLogout}>Log Out</button></div>
+
+<header>
+    <div>
+        <nav>
+            <ul>
+                <li class:active={path === "/"}><a href="/" on:click={() => path = "/"}>LanguageLearn.pro</a></li>
+                <li class:active={path === "/home"}><a on:click={() => path = "/home"} href="/home">Home</a></li>
+                <li class:active={path === "/about"}><a on:click={() => path = "/about"} href="/about">About</a></li>            
+                <li class:active={path === "/pricing"}><a on:click={() => path = "/pricing"} href="/pricing">Pricing</a></li>            
+            </ul>
+        </nav>
+    </div>
+    {#if userLocal != null}    
+    <div class="login-display">{userLocal.username}&nbsp;&nbsp;<a href="/" on:click|preventDefault={onLogout}>Log Out</a></div>
     {/if}
+   
 </header>

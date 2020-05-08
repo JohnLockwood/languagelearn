@@ -8,31 +8,34 @@ $header-color: white;
 
 $header-background: $med-squid-ink;
 $header-link-active: $ember-orange;
-
 $header-font-family: Arial, Helvetica, sans-serif;
 
 h1 {color: $light-squid-ink;}
-nav {marin:0;}
-nav ul li.active { background-color: $header-link-active;}
-nav ul { margin:0; padding:0;}
 
-nav ul li:first-child {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 1em}
-nav ul li:not(first-child) {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 2em}
-
-nav ul li a { color: $header-color; text-decoration: none; font-weight: bold; font-size:1.1em;}
-nav ul li a:hover {text-decoration: none;}
 html { font-family: $header-font-family}
 .title {color:white;}
 html, body { margin:0;}
 .subtitle {color: whitesmoke;}
 .app { width: 100%; }
-header { color: $header-color; text-align: left; background-color: $header-background; width: 100%;  }
+
+header { width:100%; color: $header-color; text-align: left; background-color: $header-background;  display: grid; grid-template-columns: auto auto;}
+nav {margin:0; display:inline-block;} 
+nav ul li.active { background-color: $header-link-active;}
+nav ul { margin:0; padding:0;}
+
+nav ul li:first-child {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 1em}
+nav ul li:not(first-child) {margin:0; list-style: none; display:inline-block; padding: 1em 2em 1em 2em}
+nav ul li a { color: $header-color; text-decoration: none; font-weight: bold; font-size:1.1em;}
+nav ul li a:hover {text-decoration: none;}
+
+.login-display { font-weight: bold; font-size: 1.1em; color:white; padding: .9em;  text-align:right; padding-right:2em;}
+
 .two-columns { display: grid; grid-template-columns: 55% 40%;}
 .column {display: block; position:relative;margin: 1em 1em 1em 1em;}
 small { font-size: .8em;}
 label {display:block; }
-input[type=text] {width: 90%; padding:1em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;box-sizing:content-box;}
-input[type=password] { width: 90%; padding:1em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;}
+input[type=text] {width: 90%; font-size:1.1em; padding:.6em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;box-sizing:content-box;}
+input[type=password] { width: 90%; font-size:1.1em; padding:.6em; margin-bottom:1em; border: 1px solid $gray; border-radius: 4px;}
 button {padding: .8em; border-radius: 4px; margin:0}
 
 .is-primary {font-size: 1.1em; background-color: $ember-orange; color: white; border:1px inset $light-orange;}

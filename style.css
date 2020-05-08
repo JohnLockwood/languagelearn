@@ -2,8 +2,38 @@ h1 {
   color: #55677d;
 }
 
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.title {
+  color: white;
+}
+
+html, body {
+  margin: 0;
+}
+
+.subtitle {
+  color: whitesmoke;
+}
+
+.app {
+  width: 100%;
+}
+
+header {
+  width: 100%;
+  color: white;
+  text-align: left;
+  background-color: #232f3e;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 nav {
-  marin: 0;
+  margin: 0;
+  display: inline-block;
 }
 
 nav ul li.active {
@@ -40,31 +70,13 @@ nav ul li a:hover {
   text-decoration: none;
 }
 
-html {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.title {
+.login-display {
+  font-weight: bold;
+  font-size: 1.1em;
   color: white;
-}
-
-html, body {
-  margin: 0;
-}
-
-.subtitle {
-  color: whitesmoke;
-}
-
-.app {
-  width: 100%;
-}
-
-header {
-  color: white;
-  text-align: left;
-  background-color: #232f3e;
-  width: 100%;
+  padding: 0.9em;
+  text-align: right;
+  padding-right: 2em;
 }
 
 .two-columns {
@@ -88,7 +100,8 @@ label {
 
 input[type=text] {
   width: 90%;
-  padding: 1em;
+  font-size: 1.1em;
+  padding: 0.6em;
   margin-bottom: 1em;
   border: 1px solid #828282;
   border-radius: 4px;
@@ -97,7 +110,8 @@ input[type=text] {
 
 input[type=password] {
   width: 90%;
-  padding: 1em;
+  font-size: 1.1em;
+  padding: 0.6em;
   margin-bottom: 1em;
   border: 1px solid #828282;
   border-radius: 4px;
