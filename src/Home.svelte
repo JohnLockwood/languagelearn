@@ -11,11 +11,10 @@ user.subscribe(value => userLocal = value);
     {#if userLocal == null}
     <div class="two-columns">
         <div class="column">
-            <h1>Cool Marketing Fluff</h1>
+            <h1>Converse, Translate, Study</h1>
             <ul>
-                <li>Find Language Partners</li>
-                <li>Marry Them</li>
-                <li>Yet another chat demo</li>
+                <li>Find and chat with language partners</li>
+                <li>Build and study materials based on live conversations</li>                
             </ul>
             </div>
         <div id="authenticate" class="column">
