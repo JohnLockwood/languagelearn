@@ -1,0 +1,79 @@
+type Conversation {
+  createdAt: String
+  id: ID!
+  messages(after: String, first: Int): MessageConnection
+  name: String!
+}
+
+type Message {
+  author: User
+  content: String!
+  conversationId: ID!
+  createdAt: String
+  id: ID!
+  isSent: Boolean
+  recipient: User
+  sender: String
+}
+
+type MessageConnection {
+  messages: [Message]
+  nextToken: String
+}
+
+type Mutation {
+  createConversation(createdAt: String, id: ID!, name: String!): Conversation
+  createMessage(content: String, conversationId: ID!, createdAt: String!, id: ID!): Message
+  createUser(username: String!, id: String!): User
+  createUserConversations(conversationId: ID!, userId: ID!): UserConversations
+}
+
+type Query {
+  allMessage(after: String, conversationId: ID!, first: Int): [Message]
+  allMessageConnection(after: String, conversationId: ID!, first: Int): MessageConnection
+  allMessageFrom(after: String, conversationId: ID!, first: Int, sender: String!): [Message]
+  allUser(after: String, first: Int): [User]
+  me: User
+}
+
+type Subscription {
+  subscribeToNewMessage(conversationId: ID!): Message @aws_subscribe(mutations: ["createMessage"])
+  subscribeToNewUCs(userId: ID!): UserConversations @aws_subscribe(mutations: ["createUserConversations"])
+  subscribeToNewUsers: User @aws_subscribe(mutations: ["createUser"])
+}
+
+type User {
+  id: ID!
+  conversations(after: String, first: Int): UserConverstationsConnection
+  messages(after: String, first: Int): MessageConnection
+  username: String!
+  registered: Boolean
+}
+
+enum LanguageLevel {
+  NATIVE
+  FLUENT
+  ADVANCED
+  INTERMEDIATE
+  BEGINNER
+}
+
+type UserLanguage {
+  id: ID!
+  user: User!
+  language: String!
+  level: LanguageLevel!
+}
+
+type UserConversations {
+  associated: [UserConversations]
+  conversation: Conversation
+  conversationId: ID!
+  user: User
+  userId: ID!
+}
+
+type UserConverstationsConnection {
+  nextToken: String
+  userConversations: [UserConversations]
+}

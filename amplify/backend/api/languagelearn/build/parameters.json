@@ -1,0 +1,13 @@
+{
+    "AppSyncApiName": "languagelearn",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authlanguagelearn6919f14c",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-languagelearn-dev-133003-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/c3ffdcb5eccaf544f52ac76b2398737294d0f892"
+}
