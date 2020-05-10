@@ -33,3 +33,5 @@ Version 001 Schema and Demo
 See also:
 
 `Building a serverless real-time chat application with AWS AppSync <https://aws.amazon.com/blogs/mobile/building-a-serverless-real-time-chat-application-with-aws-appsync/>`_
+
+The schema for that project is `here <https://github.com/amazon-archives/aws-mobile-appsync-chat-starter-angular/blob/master/backend/schema.graphql>`_
