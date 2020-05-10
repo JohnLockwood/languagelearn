@@ -1,7 +1,21 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "An auto-generated nested stack.",
-    "Metadata": {},
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "37a1c400-9879-4470-93f4-e1f060ea7e44": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -34,
+                    "y": 107.75
+                },
+                "z": 0
+            }
+        }
+    },
     "Parameters": {
         "AppSyncApiId": {
             "Type": "String",
@@ -27,9 +41,26 @@
         }
     },
     "Resources": {
-        "EmptyResource": {
-            "Type": "Custom::EmptyResource",
-            "Condition": "AlwaysFalse"
+        "Conversations": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+                "TableName": {
+                    "Fn::Sub": "${env}_conversations"
+                },
+                "BillingMode": "PAY_PER_REQUEST",
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ]
+            }
         }
     },
     "Conditions": {
@@ -54,7 +85,7 @@
     },
     "Outputs": {
         "EmptyOutput": {
-            "Description": "An empty output. You may delete this if you have at least one resource above.",
+            "Description": "Johnsin empty output.  No wonder I feel so empty.",
             "Value": ""
         }
     }

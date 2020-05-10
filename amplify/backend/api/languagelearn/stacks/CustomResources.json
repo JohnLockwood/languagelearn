@@ -1,61 +1,90 @@
 {
-	"AWSTemplateFormatVersion": "2010-09-09",
-	"Description": "An auto-generated nested stack.",
-	"Metadata": {},
-	"Parameters": {
-		"AppSyncApiId": {
-			"Type": "String",
-			"Description": "The id of the AppSync API associated with this project."
-		},
-		"AppSyncApiName": {
-			"Type": "String",
-			"Description": "The name of the AppSync API",
-			"Default": "AppSyncSimpleTransform"
-		},
-		"env": {
-			"Type": "String",
-			"Description": "The environment name. e.g. Dev, Test, or Production",
-			"Default": "NONE"
-		},
-		"S3DeploymentBucket": {
-			"Type": "String",
-			"Description": "The S3 bucket containing all deployment assets for the project."
-		},
-		"S3DeploymentRootKey": {
-			"Type": "String",
-			"Description": "An S3 key relative to the S3DeploymentBucket that points to the root\nof the deployment directory."
-		}
-	},
-	"Resources": {
-		"EmptyResource": {
-			"Type": "Custom::EmptyResource",
-			"Condition": "AlwaysFalse"
-		}
-	},
-	"Conditions": {
-		"HasEnvironmentParameter": {
-			"Fn::Not": [
-				{
-					"Fn::Equals": [
-						{
-							"Ref": "env"
-						},
-						"NONE"
-					]
-				}
-			]
-		},
-		"AlwaysFalse": {
-			"Fn::Equals": [
-				"true",
-				"false"
-			]
-		}
-	},
-	"Outputs": {
-		"EmptyOutput": {
-			"Description": "An empty output. You may delete this if you have at least one resource above.",
-			"Value": ""
-		}
-	}
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "An auto-generated nested stack.",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "37a1c400-9879-4470-93f4-e1f060ea7e44": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": -34,
+                    "y": 107.75
+                },
+                "z": 0
+            }
+        }
+    },
+    "Parameters": {
+        "AppSyncApiId": {
+            "Type": "String",
+            "Description": "The id of the AppSync API associated with this project."
+        },
+        "AppSyncApiName": {
+            "Type": "String",
+            "Description": "The name of the AppSync API",
+            "Default": "AppSyncSimpleTransform"
+        },
+        "env": {
+            "Type": "String",
+            "Description": "The environment name. e.g. Dev, Test, or Production",
+            "Default": "NONE"
+        },
+        "S3DeploymentBucket": {
+            "Type": "String",
+            "Description": "The S3 bucket containing all deployment assets for the project."
+        },
+        "S3DeploymentRootKey": {
+            "Type": "String",
+            "Description": "An S3 key relative to the S3DeploymentBucket that points to the root\nof the deployment directory."
+        }
+    },
+    "Resources": {
+        "Conversations": {
+            "Type": "AWS::DynamoDB::Table",
+            "Properties": {
+				"TableName": { "Fn::Sub": "${env}_conversations"},
+                "BillingMode": "PAY_PER_REQUEST",
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "KeySchema":  [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ]
+            }
+        }
+    },
+    "Conditions": {
+        "HasEnvironmentParameter": {
+            "Fn::Not": [
+                {
+                    "Fn::Equals": [
+                        {
+                            "Ref": "env"
+                        },
+                        "NONE"
+                    ]
+                }
+            ]
+        },
+        "AlwaysFalse": {
+            "Fn::Equals": [
+                "true",
+                "false"
+            ]
+        }
+    },
+    "Outputs": {
+        "EmptyOutput": {
+            "Description": "Johnsin empty output.  No wonder I feel so empty.",
+            "Value": ""
+        }
+    }
 }
