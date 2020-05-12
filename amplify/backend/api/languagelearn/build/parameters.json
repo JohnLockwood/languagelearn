@@ -10,5 +10,5 @@
         ]
     },
     "S3DeploymentBucket": "amplify-languagelearn-dev-133003-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/31bb5ad9eabb73b0529d2cbfbfcf44d77097f02c"
+    "S3DeploymentRootKey": "amplify-appsync-files/e5a5b7ec75a05de3799d9ffe1765a1b4034704b2"
 }

@@ -200,7 +200,7 @@
                         {
                             "Ref": "APIKeyExpirationEpoch"
                         },
-                        1620667191
+                        1620778509
                     ]
                 }
             },
@@ -242,9 +242,6 @@
                     },
                     "AppSyncApiName": {
                         "Ref": "AppSyncApiName"
-                    },
-                    "env": {
-                        "Ref": "env"
                     },
                     "S3DeploymentBucket": {
                         "Ref": "S3DeploymentBucket"

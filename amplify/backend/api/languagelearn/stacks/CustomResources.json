@@ -1,90 +1,130 @@
 {
-    "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "An auto-generated nested stack.",
-    "Metadata": {
-        "AWS::CloudFormation::Designer": {
-            "37a1c400-9879-4470-93f4-e1f060ea7e44": {
-                "size": {
-                    "width": 60,
-                    "height": 60
-                },
-                "position": {
-                    "x": -34,
-                    "y": 107.75
-                },
-                "z": 0
-            }
-        }
-    },
+    "Description": "AWS CloudFormation Sample Template: This template demonstrates the creation of a DynamoDB table.",
     "Parameters": {
         "AppSyncApiId": {
-            "Type": "String",
-            "Description": "The id of the AppSync API associated with this project."
+            "Description": "The id of the AppSync API associated with this project.",
+            "Type": "String"
         },
         "AppSyncApiName": {
-            "Type": "String",
-            "Description": "The name of the AppSync API",
-            "Default": "AppSyncSimpleTransform"
-        },
-        "env": {
-            "Type": "String",
+            "Default": "NONE",
             "Description": "The environment name. e.g. Dev, Test, or Production",
-            "Default": "NONE"
+            "Type": "String"
         },
         "S3DeploymentBucket": {
-            "Type": "String",
-            "Description": "The S3 bucket containing all deployment assets for the project."
+            "Description": "The S3 bucket containing all deployment assets for the project.",
+            "Type": "String"
         },
         "S3DeploymentRootKey": {
-            "Type": "String",
-            "Description": "An S3 key relative to the S3DeploymentBucket that points to the root\nof the deployment directory."
+            "Description": "An S3 key relative to the S3DeploymentBucket that points to the root\nof the deployment directory.",
+            "Type": "String"
         }
     },
     "Resources": {
-        "Conversations": {
-            "Type": "AWS::DynamoDB::Table",
+        "conversationTable": {
             "Properties": {
-				"TableName": { "Fn::Sub": "${env}_conversations"},
-                "BillingMode": "PAY_PER_REQUEST",
                 "AttributeDefinitions": [
                     {
                         "AttributeName": "id",
                         "AttributeType": "S"
                     }
                 ],
-                "KeySchema":  [
+                "BillingMode": "PAY_PER_REQUEST",
+                "KeySchema": [
                     {
                         "AttributeName": "id",
                         "KeyType": "HASH"
                     }
-                ]
-            }
-        }
-    },
-    "Conditions": {
-        "HasEnvironmentParameter": {
-            "Fn::Not": [
-                {
-                    "Fn::Equals": [
-                        {
-                            "Ref": "env"
-                        },
-                        "NONE"
-                    ]
-                }
-            ]
+                ],
+                "TableName": "dev_conversation"
+            },
+            "Type": "AWS::DynamoDB::Table"
         },
-        "AlwaysFalse": {
-            "Fn::Equals": [
-                "true",
-                "false"
-            ]
-        }
-    },
-    "Outputs": {
-        "EmptyOutput": {
-            "Description": "Johnsin empty output.  No wonder I feel so empty.",
-            "Value": ""
+        "messageTable": {
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "conversationId",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "createdAt",
+                        "AttributeType": "S"
+                    }
+                ],
+                "BillingMode": "PAY_PER_REQUEST",
+                "KeySchema": [
+                    {
+                        "AttributeName": "conversationId",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "createdAt",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TableName": "dev_message"
+            },
+            "Type": "AWS::DynamoDB::Table"
+        },
+        "userConversationTable": {
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "userId",
+                        "AttributeType": "S"
+                    },
+                    {
+                        "AttributeName": "conversationId",
+                        "AttributeType": "S"
+                    }
+                ],
+                "BillingMode": "PAY_PER_REQUEST",
+                "GlobalSecondaryIndexes": [
+                    {
+                        "IndexName": "conversationId-index",
+                        "KeySchema": [
+                            {
+                                "AttributeName": "conversationId",
+                                "KeyType": "HASH"
+                            }
+                        ],
+                        "Projection": {
+                            "ProjectionType": "ALL"
+                        }
+                    }
+                ],
+                "KeySchema": [
+                    {
+                        "AttributeName": "userId",
+                        "KeyType": "HASH"
+                    },
+                    {
+                        "AttributeName": "conversationId",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "TableName": "dev_user_conversation"
+            },
+            "Type": "AWS::DynamoDB::Table"
+        },
+        "userTable": {
+            "Properties": {
+                "AttributeDefinitions": [
+                    {
+                        "AttributeName": "id",
+                        "AttributeType": "S"
+                    }
+                ],
+                "BillingMode": "PAY_PER_REQUEST",
+                "KeySchema": [
+                    {
+                        "AttributeName": "id",
+                        "KeyType": "HASH"
+                    }
+                ],
+                "TableName": "dev_user"
+            },
+            "Type": "AWS::DynamoDB::Table"
         }
     }
 }
