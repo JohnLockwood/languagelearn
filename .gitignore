@@ -7,7 +7,7 @@ amplify/.config/local-*
 amplify/mock-data
 amplify/backend/amplify-meta.json
 amplify/backend/awscloudformation
-tbuild/
+build/
 dist/
 node_modules/
 aws-exports.js
@@ -17,3 +17,4 @@ amplify-build-config.json
 amplify-gradle-config.json
 amplifyxc.config
 doc\build\doctrees
+doc\build

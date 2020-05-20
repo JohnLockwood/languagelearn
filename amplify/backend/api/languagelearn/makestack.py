@@ -21,6 +21,10 @@ env = "dev"
 t.set_description("AWS CloudFormation Sample Template: This template "
                   "demonstrates the creation of a DynamoDB table.")
 
+# ---------------------------------------------------------------------------------
+# Parameters
+# ---------------------------------------------------------------------------------
+
 t.add_parameter(Parameter(
     "AppSyncApiId",
     Type="String",
@@ -44,6 +48,10 @@ t.add_parameter(Parameter(
     Description="An S3 key relative to the S3DeploymentBucket that points to the root\nof the deployment directory.",
 ))
 
+# ---------------------------------------------------------------------------------
+# Tables
+# ---------------------------------------------------------------------------------
+
 t.add_resource(Table(
     "conversationTable",
     TableName = f"{env}_conversation",
@@ -56,7 +64,6 @@ t.add_resource(Table(
     KeySchema=simpleKeySchema(),
     BillingMode="PAY_PER_REQUEST"
 ))
-
 
 t.add_resource(Table(
     "userConversationTable",
@@ -94,7 +101,6 @@ t.add_resource(Table(
     ]
 ))
 
-
 t.add_resource(Table(
     "userTable",
     TableName = f"{env}_user",
@@ -112,8 +118,6 @@ t.add_resource(Table(
     ],
     BillingMode="PAY_PER_REQUEST"
 ))
-
-
 
 t.add_resource(Table(
     "messageTable",
@@ -139,6 +143,11 @@ t.add_resource(Table(
         ),    ],
     BillingMode="PAY_PER_REQUEST"
 ))
+
+# ---------------------------------------------------------------------------------
+# Access Roles
+# ---------------------------------------------------------------------------------
+
 
 
 
