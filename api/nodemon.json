@@ -1,0 +1,7 @@
+{
+    "verbose": false,
+    "ignore": ["src/**/*.spec.ts", "src/*.spec.ts", "fixtures/*"],
+    "watch": ["src/*.ts", "src/**/*.ts"]
+ }
+
+
