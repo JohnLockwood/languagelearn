@@ -1,6 +1,19 @@
 import {User} from "./User";
-import {getConnection, createConnection} from "typeorm";
+import {Connector} from './Connector';
+import {getConnection, Connection, createConnection} from "typeorm";
 import { print } from "graphql";
+
+let connection: Connection | null = null;
+
+beforeAll((done)  =>{
+
+    //console.log("Testing -- beforeEach")
+    createConnection().then((c) => {
+        //console.log("Hello");
+        connection = c;
+        done();
+    })
+});
 
 test('basic', () => {
     expect('Hello ' + 'John').toBe('Hello John');
@@ -11,11 +24,12 @@ test('canCreateAndSaveUser', done  => {
     user.userName = "John";
     user.email = "Fake@example.com";
     user.password = "SomeHashedSecret";
-    let connection = createConnection().then((conn)=> {
-        let userRepository = conn.getRepository(User);
-        userRepository.save(user).then ((r) => {
-            console.log(r);
+
+    let connection = getConnection();
+    // console.log("Called getConnection")
+    let userRepository = connection.getRepository(User);
+    userRepository.save(user).then ((r) => {
+            // console.log(r);
             done();
         })
-    });
 })
