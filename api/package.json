@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "compile": "tsc && node build/app.js",
+    "dev": "nodemon -e ts  --exec \"npm run compile\"",
     "start": "nodemon --exec node --inspect -r ts-node/register src/app.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^25.2.3",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.0.0",
     "tslint": "^6.1.2",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.3"
   },
   "dependencies": {
     "class-validator": "^0.12.2",
@@ -19,8 +24,10 @@
     "graphql": "^15.0.0",
     "graphql-yoga": "^1.18.3",
     "nodemon": "^2.0.4",
+    "pg": "^8.2.1",
     "reflect-metadata": "^0.1.13",
     "ts-node": "^8.10.1",
-    "type-graphql": "^1.0.0-rc.2"
+    "type-graphql": "^1.0.0-rc.2",
+    "typeorm": "^0.2.25"
   }
 }

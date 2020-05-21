@@ -51,7 +51,7 @@ class RecipesArgs {
 
 class RecipeService {
   findById = (id: string) : Promise<Recipe> => {
-    return Promise.resolve({id: id, title: "A fake recipe title", creationDate:  new Date(Date.now()), ingredients: ["An egg"]})
+    return Promise.resolve({id: id, title: "Another fake recipe title", creationDate:  new Date(Date.now()), ingredients: ["An egg"]})
   }
   findAll = (args: RecipesArgs) : Recipe[] => {
     return [{id: "99", title: "A fake recipe title", creationDate:  new Date(Date.now()), ingredients: ["An egg"]}];
