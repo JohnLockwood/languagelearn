@@ -1,8 +1,9 @@
 import "reflect-metadata";
 import {ObjectType, Field, ID, Mutation, Query, Resolver, ArgsType, InputType, Int, Arg, Args, buildTypeDefsAndResolvers} from "type-graphql"
 import {Length, MaxLength, ArrayMaxSize, Min, Max} from "class-validator";
-//import { GraphQLSchema } from "graphql";
 import { GraphQLServer} from "graphql-yoga";
+import {connect} from "./entities/Connector";
+import { isTypeSystemDefinitionNode } from "graphql";
 
 @ObjectType()
 class Recipe {
@@ -133,9 +134,21 @@ const getTypeDefsAndResolvers  = async () => {
   return {typeDefs, resolvers};  
 }
 
-getTypeDefsAndResolvers().then((resp) => {
-  const server = new GraphQLServer(resp);
-  server.start();
-  // const {typeDefs, resolvers} = resp;
-});
+function startServer() {
+  console.log("Getting resolvers.");
+  getTypeDefsAndResolvers().then((resp) => {
+    const server = new GraphQLServer(resp);
+    connect()
+      .then( () => {
+        console.log("Listening on port 4000...");
+        server.start();
+      })
+      .catch((err) => {
+        console.log("Unable to start server, error = " + err);
+        process.exit(-1);  
+      })
 
+  });
+}
+
+startServer();

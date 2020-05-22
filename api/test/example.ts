@@ -1,5 +1,5 @@
 import {getConnection} from "typeorm";
-import {User} from "../src/entities/User";
+import {User, UserService} from "../src/entities/User";
 import {getConnection} from "typeorm";
 
 var assert = require('assert');
@@ -13,7 +13,7 @@ describe('Array', function() {
 
 
 describe('User', function() {
-  it('canCreateAndSaveUser', function(done)  {
+  it('can create and save user in test', function(done)  {
     let user = new User();
     user.userName = "John";
     user.email = "Fake@example.com";
@@ -27,4 +27,18 @@ describe('User', function() {
             done();
         })
   });
+
+  it('can be saved using user service', function(done) {
+    let user = new User();
+    user.userName = "Jenniffer";
+    user.email = "Jenniffer@hotmail.com";
+    user.password = "SomeOtherHashedSecret";
+    let service = new UserService();
+    service.save(user).then((r) => {
+      console.log("Saved user via service!");
+      console.log(r);
+      done();
+    })
+  });
+
 });

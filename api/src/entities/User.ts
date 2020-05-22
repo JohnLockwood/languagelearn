@@ -1,6 +1,6 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, getConnection} from "typeorm";
 
-@Entity("my_users")
+@Entity("app_users")
 export class User {
     
     @PrimaryGeneratedColumn("uuid")
@@ -14,4 +14,12 @@ export class User {
 
     @Column()
     password: string;
+}
+
+
+export class UserService {
+    save(user: User): Promise<User> {
+        let userRepository = getConnection().getRepository(User);
+        return userRepository.save(user);
+    }
 }
