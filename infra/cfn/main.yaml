@@ -1,0 +1,59 @@
+Resources:
+  LanguageLearnProductionEC2:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t3.micro
+      ImageId: ami-0e9089763828757e1
+      KeyName: NorthernVirginiaMyEC2KeyPair
+      Tags:
+        - Key: Name
+          Value: LanguageLearn
+        - Key: Description
+          Value: Language Learn production server
+      SecurityGroupIds:
+        - Ref: LanguageLearnSecurityGroup
+      IamInstanceProfile: !Ref RootInstanceProfile
+  LanguageLearnSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Allow http and ssh to client host -- needs to be more locked down
+      VpcId: vpc-7339af08
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+  RootRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - "sts:AssumeRole"
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMReadOnlyAccess
+  RootInstanceProfile:
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      Path: /
+      Roles:
+        - !Ref RootRole
