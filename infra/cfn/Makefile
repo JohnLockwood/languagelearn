@@ -5,7 +5,7 @@ up:
 
 show:
 	aws cloudformation describe-stacks --stack-name LanguageLearn 
-	# aws cloudformation describe-stack-events --stack-name LanguageLearn 
+	aws cloudformation describe-stack-events --stack-name LanguageLearn 
 
 down:
 	aws cloudformation delete-stack --stack-name LanguageLearn 
