@@ -4,35 +4,22 @@ Description: >-
   showing how to create an Amazon Aurora Serverless DB cluster. **WARNING** This
   template creates an Amazon Aurora DB cluster. You will be billed for the AWS
   resources used if you create a stack from this template.
-Parameters:
-  DBUsername:
-    NoEcho: 'true'
-    Description: Username for MySQL database access
-    Type: String
-    MinLength: '1'
-    MaxLength: '16'
-    AllowedPattern: '[a-zA-Z][a-zA-Z0-9]*'
-    ConstraintDescription: must begin with a letter and contain only alphanumeric characters.
-  DBPassword:
-    NoEcho: 'true'
-    Description: Password MySQL database access
-    Type: String
-    MinLength: '8'
-    MaxLength: '41'
-    AllowedPattern: '[a-zA-Z0-9]*'
-    ConstraintDescription: must contain only alphanumeric characters.
+
 Resources:
-  RDSCluster:
-    Type: 'AWS::RDS::DBCluster'
-    Properties:
-      MasterUsername: !Ref DBUsername
-      MasterUserPassword: !Ref DBPassword
-      DBClusterIdentifier: my-serverless-cluster
-      Engine: aurora
-      EngineVersion: 5.6.10a
-      EngineMode: serverless
-      ScalingConfiguration:
-        AutoPause: true
-        MinCapacity: 4
-        MaxCapacity: 32
-        SecondsUntilAutoPause: 1000
+    RDSCluster:
+        Type: AWS::RDS::DBCluster
+        Properties:
+            MasterUsername: '{{resolve:ssm:/LanguageLearn/production/POSTGRES_USER:1}}'
+            MasterUserPassword: '{{resolve:ssm-secure:/LanguageLearn/production/POSTGRES_PASSWORD:1}}'
+            DBClusterIdentifier: languagelearn-prod-db
+            Engine: aurora
+            EngineVersion: 5.6.10a
+            EngineMode: serverless
+            Tags:
+                - Key:  Name
+                  Value: LanguageLearnProdDatabase
+            ScalingConfiguration:
+                AutoPause: true
+                MinCapacity: 2
+                MaxCapacity: 32
+                SecondsUntilAutoPause: 300
