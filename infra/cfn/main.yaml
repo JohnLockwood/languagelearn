@@ -15,6 +15,8 @@ Resources:
       IamInstanceProfile: !Ref RootInstanceProfile
       UserData: 
         Fn::Base64: !Sub |
+          #cloud-boothook
+          #!/bin/bash
           set -e -x 
           export POSTGRES_USER=$(aws --region=us-east-1 ssm get-parameter --name /LanguageLearn/production/POSTGRES_USER --query "Parameter.Value")
           mkdir /app
