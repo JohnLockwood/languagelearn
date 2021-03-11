@@ -1,6 +1,11 @@
 # LanguageLearn.pro
+##  DEPRECATED!!!!  This was a working Amplify App at some point.
 
 ## Running locally
+
+
+
+
 
 We don't yet have parallelshell working on windows, so in separate terminals run:
 
