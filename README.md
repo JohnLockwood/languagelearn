@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# LanguageLearn.pro
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the home of code and documentation supporting my English teaching business.  The name of the business is subject to change before launch.
 
-## Available Scripts
+## Vision
 
-In the project directory, you can run:
+The current vision is of an English Language Learning site focusing on Spanish speaking learners.  This was the same vision as in 
+legacy/maestro-de-ingles but now we are reworking the projected development frameworks based on the architectural constraints (next section).
 
-### `npm start`
+## Architectural constraints:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Constraints that Django would have probably supported well:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Lesson authoring should be simple, ideally an editor or similar + audacity.
+* Authentication needs to be cheap and easy to do.
+* Must support SEO well -- high static content
+* Must be tech I want to use (could also go for next category?)
+* Should be less than $100 / month for the first three years.
 
-### `npm test`
+### Constraints that Django would have supported less well:
+* Must be beautiful
+* Must be interactive
+* Must enable web + android + ios.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional planning needed
 
-### `npm run build`
+* In general I'm not sure the business (as opposed to the technology) may not be thought out enough.
+* Lesson pages need further elaboration and design.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Learning and other activities to be scheduled:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* [x] Revisit the business plan.
+* New technical plan including detail on lesson pages.  We're in the process
+  of learning what this might be, and some approaches we're trying as of now are:
+    * React, [NextJS](https://nextjs.org) to get the page breakdown between front and back end right (we hope), and Material UI.  We're hoping [this Udemy course](https://hitachivantara.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/) will teach us this as well as letting us find out if it's the right approach.
+    * (Possibly) Amplify (And by extension, GraphML etc. for the back end and the auth).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Webstorm
 
-### `npm run eject`
+## Technical choices already rejected or deferred:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* **Django** -- Too hard to see how to integrate SEO with a beautiful front end without becoming more of a designer. This is one we might revisit if the rest of these dumb ideas don't pan out.
+* **Typescript** -- See our original comment.  "Typescript might be worth learning, but it does complicate things in the short term."
+* **Serverless Framework** "Look what they've done to my AWS credentials, ma."  Security issues. With a dependency on serverless and using the Amplify stuff too, I think trying this will lead to a hot mess: [Multi-Env Next/JS with AWS Amplify Serverless](https://dev.to/aarongarvey/multi-env-next-js-app-with-aws-amplify-serverless-3571).  So we'll let that guy go down that road. I'm busy here. :)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

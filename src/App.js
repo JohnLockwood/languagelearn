@@ -1,13 +1,16 @@
-import './App.css';
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div >
+      <header >
       <p>LanguageLearn.pro</p>
       </header>
-      <main className="App-body">
+      <main >
         <p>The site so nice we wrote it twice!</p>
+          <Button variant="contained">
+              Click me!
+          </Button>
       </main>
     </div>
   );
