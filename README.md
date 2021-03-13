@@ -1,41 +1,70 @@
-# LanguageLearn.pro
+# Getting Started with Create React App
 
-This is the home of code and documentation supporting my English teaching business.  The name of the business is subject to change before launch.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Vision
+## Available Scripts
 
-The current vision is of an English Language Learning site focusing on Spanish speaking learners.  This was the same vision as in 
-legacy/maestro-de-ingles but now we are reworking the projected development frameworks based on the architectural constraints (next section).
+In the project directory, you can run:
 
-## Architectural constraints:
+### `npm start`
 
-### Constraints that Django would have probably supported well:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-* Lesson authoring should be simple, ideally an editor or similar + audacity.
-* Authentication needs to be cheap and easy to do.
-* Must support SEO well -- high static content
-* Must be tech I want to use (could also go for next category?)
-* Should be less than $100 / month for the first three years.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### Constraints that Django would have supported less well:
-* Must be beautiful
-* Must be interactive
-* Must enable web + android + ios.
+### `npm test`
 
-## Additional planning needed
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-* In general I'm not sure the business (as opposed to the technology) may not be thought out enough.
-* Lesson pages need further elaboration and design.
+### `npm run build`
 
-## Learning and other activities to be scheduled:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* [x] Revisit the business plan.
-* New technical plan including detail on lesson pages.
-* Work through the article and the "Additional Resource Links" links in this article [Multi-Env Next/JS with AWS Amplify Serverless](https://dev.to/aarongarvey/multi-env-next-js-app-with-aws-amplify-serverless-3571).
-* This involves digging in much further into:
-    * React
-    * Amplify (And by extension, GraphML etc.)
-    * [Serverless Framework](https://www.serverless.com)
-    * [NextJS](https://nextjs.org), including the [Serverless NextJS Plugin](https://www.serverless.com/plugins/serverless-nextjs-plugin)
-* In addition, Typescript might be worth learning, but it does complicate things in the short term.
-* Webstorm
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
