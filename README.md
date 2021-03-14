@@ -27,6 +27,11 @@ legacy/maestro-de-ingles but now we are reworking the projected development fram
 * In general I'm not sure the business (as opposed to the technology) may not be thought out enough.
 * Lesson pages need further elaboration and design.
 
+## Things that are working well
+
+* Material UI.  So far so good with this.  Using this and NextJS for front end it looks like.
+  * See the [Interactive List Demo](https://material-ui.com/components/lists/#interactive) for some ideas we can use for the learning cards.  But See [Cards](https://material-ui.com/components/cards/) too.  For the Kanban board idea, see [Transfer List](https://material-ui.com/components/transfer-list/).  (Actually those demos are lame :( ).
+  * NextJS - Uses getStaticProps and getServerProps to distinguish between static content and dynamic.
 ## Learning and other activities to be scheduled:
 
 * [x] Revisit the business plan.

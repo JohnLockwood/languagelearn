@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-/* US Blue is #3C3B6E - Approximate Hex Codes of Flag Colors are Red (#B22234), Blue (#3C3B6E) and White(#FFFFFF). */
+
 
 function ElevationScroll(props) {
   const { children, window } = props;
