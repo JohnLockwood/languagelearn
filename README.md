@@ -34,10 +34,13 @@ legacy/maestro-de-ingles but now we are reworking the projected development fram
   * NextJS - Uses getStaticProps and getServerProps to distinguish between static content and dynamic.
 ## Learning and other activities to be scheduled:
 
+* Architectural choices especially around auth.  Amplify looks like it can handle everything we need to do, albeit not as static pages.  Search for "Amplify API Group authorization" or "Setup Authorization Rules" or see AmplifyAuthorizationByGroupsDoc.pdf in this directory.
+Amplify is weaker on static pages, and mostly orthogonal to NextJS I think, but it might be a much quicker approach since it's more of an all-in approach.  React is well supported with auth components.  Customization is available, see
+[this doc](https://docs.amplify.aws/ui/customization/theming/q/framework/react), and there are also some [Material UI components](https://github.com/aws-samples/aws-amplify-material-ui-js-demo) available -- this is nice, done in typescript.  Should set that up in a demo instead of the [JS Demo I'm working on](https://docs.amplify.aws/start/getting-started/auth/q/integration/react).
 * [x] Revisit the business plan.
 * New technical plan including detail on lesson pages.  We're in the process
   of learning what this might be, and some approaches we're trying as of now are:
-    * React, [NextJS](https://nextjs.org) to get the page breakdown between front and back end right (we hope), and Material UI.  We're hoping [this Udemy course](https://hitachivantara.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/) will teach us this as well as letting us find out if it's the right approach.
+    * React,  and Material UI.  We're hoping [this Udemy course](https://hitachivantara.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/) will teach us this as well as letting us find out if it's the right approach.
     * (Possibly) Amplify (And by extension, GraphML etc. for the back end and the auth).
 
 * Webstorm
