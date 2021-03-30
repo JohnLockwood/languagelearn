@@ -32,8 +32,20 @@ legacy/maestro-de-ingles but now we are reworking the projected development fram
 * Material UI.  So far so good with this.  Using this and NextJS for front end it looks like.
   * See the [Interactive List Demo](https://material-ui.com/components/lists/#interactive) for some ideas we can use for the learning cards.  But See [Cards](https://material-ui.com/components/cards/) too.  For the Kanban board idea, see [Transfer List](https://material-ui.com/components/transfer-list/).  (Actually those demos are lame :( ).
   * NextJS - Uses getStaticProps and getServerProps to distinguish between static content and dynamic.
+
+
 ## Learning and other activities to be scheduled:
 
+### Step 1
+
+* Here, move existing source to a branch under legacy, then...
+* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/react).  When you get to the authentication part, consult [Amplify Material UI](https://www.npmjs.com/package/amplify-material-ui) and swap the imports and authenticator from there.
+* Do not do publish step, just get as far as Auth
+
+### Step 2
+* Before publishing, rework the data model for the admin
+
+### Notes on Learning
 * Architectural choices especially around auth.  Amplify looks like it can handle everything we need to do, albeit not as static pages.  Search for "Amplify API Group authorization" or "Setup Authorization Rules" or see AmplifyAuthorizationByGroupsDoc.pdf in this directory.
 Amplify is weaker on static pages, and mostly orthogonal to NextJS I think, but it might be a much quicker approach since it's more of an all-in approach.  React is well supported with auth components.  Customization is available, see
 [this doc](https://docs.amplify.aws/ui/customization/theming/q/framework/react), and there are also some [Material UI components](https://github.com/aws-samples/aws-amplify-material-ui-js-demo) available -- this is nice, done in typescript.  Should set that up in a demo instead of the [JS Demo I'm working on](https://docs.amplify.aws/start/getting-started/auth/q/integration/react).
