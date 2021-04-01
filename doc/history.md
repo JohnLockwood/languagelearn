@@ -14,3 +14,15 @@ node_modules\.bin\next
 OR 
 npm run dev
 ```
+
+## Step .02
+
+Based partly on https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/
+
+```
+# In frontend directory:
+amplify init .
+# Select yes to use a profile, and amplify-user
+npm run build
+amplify run
+```

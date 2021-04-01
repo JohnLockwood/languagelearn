@@ -7,6 +7,12 @@ This is the home of code and documentation supporting my English teaching busine
 The current vision is of an English Language Learning site focusing on Spanish-speaking learners.  This was the same vision as in 
 legacy/maestro-de-ingles but now we are reworking the projected development frameworks based on the architectural constraints (next section).
 
+## Front End
+```
+cd frontend
+npm install
+npm run dev```
+
 ## Architectural constraints:
 
 * Lesson authoring should be simple, ideally an editor or similar + audacity.
