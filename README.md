@@ -39,11 +39,27 @@ legacy/maestro-de-ingles but now we are reworking the projected development fram
 ### Step 1
 
 * Here, move existing source to a branch under legacy, then...
-* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/react).  When you get to the authentication part, consult [Amplify Material UI](https://www.npmjs.com/package/amplify-material-ui) and swap the imports and authenticator from there.
-* Do not do publish step, just get as far as Auth
+* Create two folders: frontend, backend
 
-### Step 2
-* Before publishing, rework the data model for the admin
+# The One True Architecture
+
+# Front end:
+* Work through -- in TypeScript ([see this first](https://www.velotio.com/engineering-blog/real-time-react-app-built-using-aws-amplify-graphql)) -- the [React Amplify Tutorial](https://docs.amplify.aws/start/getting-started/installation/q/integration/react).  
+* When you get to the authentication part, consult [Amplify Material UI](https://www.npmjs.com/package/amplify-material-ui) and swap the imports and authenticator from there.
+* Don't add an API
+* Do set up Auth, or try to, and try the auth workflow
+  * Set up various Groups:
+    * Guest (allow)
+    * Registered
+    * Premium
+    * Admin
+  
+# Back end
+* Restful using API Gateway and Lambda
+* SAM CLI for development
+
+
+
 
 ### Notes on Learning
 * Architectural choices especially around auth.  Amplify looks like it can handle everything we need to do, albeit not as static pages.  Search for "Amplify API Group authorization" or "Setup Authorization Rules" or see AmplifyAuthorizationByGroupsDoc.pdf in this directory.
@@ -53,7 +69,6 @@ Amplify is weaker on static pages, and mostly orthogonal to NextJS I think, but 
 * New technical plan including detail on lesson pages.  We're in the process
   of learning what this might be, and some approaches we're trying as of now are:
     * React,  and Material UI.  We're hoping [this Udemy course](https://hitachivantara.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/) will teach us this as well as letting us find out if it's the right approach.
-    * (Possibly) Amplify (And by extension, GraphML etc. for the back end and the auth).
 
 * Webstorm
 
