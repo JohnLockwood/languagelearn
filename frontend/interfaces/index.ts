@@ -8,3 +8,12 @@ export type User = {
   id: number
   name: string
 }
+
+export type Lesson = {
+  id: string
+  native_language: string
+  foreign_language: string
+  native_text: string
+  foreign_text: string
+  media?: string
+}
