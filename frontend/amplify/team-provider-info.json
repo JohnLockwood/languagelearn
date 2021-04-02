@@ -10,6 +10,11 @@
             "StackName": "amplify-languagelearn-dev-185206",
             "StackId": "arn:aws:cloudformation:us-east-1:363498436337:stack/amplify-languagelearn-dev-185206/e4190d60-933c-11eb-9457-0a24d8353619",
             "AmplifyAppId": "d23zqphg0v6anq"
+        },
+        "categories": {
+            "auth": {
+                "languagelearne270fd20": {}
+            }
         }
     }
 }
