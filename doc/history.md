@@ -1,4 +1,4 @@
-# Creating the front end:
+# Creating the Front End
 
 ## Step .01
 
@@ -69,3 +69,24 @@ Once you begin to get your head around that you can add simple customization suc
 This for example shows how to customize the [form fields](https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#customization) to remove the phone number, and the [basic usage](https://docs.amplify.aws/ui/auth/authenticator/q/framework/react#basic-usage) shows a potential way to use this without "withAuthenticator" by just having an authenticator on the page?  And this could probably set the theme as we do pages/in secret_bad_custom_auth.tsx.
 
 
+# Creating the Back End
+
+1. In root:
+
+```
+rd backend
+sam init
+# Select 1 AWS Quick Start Templates 1 for zip, 1 for latest node version
+# Project name backend
+# Select 8 Quick Start: Web Backend
+# In template.yml, change description "backend" to languagelearn_backends
+sam build 
+sam local invoke putItemFunction --event events/event-post-item.json 
+sam local invoke getAllItemsFunction --event events/event-get-all-items.json
+```
+Above stuff didn't work as is.  Trying it with dynamodb running locally.  To do this ran
+(Based on https://hub.docker.com/r/amazon/dynamodb-local)
+```
+docker run -d -p 8000:8000 --name dynamodb amazon/dynamodb-local
+aws dynamodb list-tables --endpoint-url http://127.0.0.1:8000
+```
