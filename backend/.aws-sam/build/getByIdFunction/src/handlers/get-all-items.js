@@ -1,26 +1,7 @@
 // Create clients and set shared const values outside of the handler.
-
-// Get the DynamoDB table name from environment variables
+// Get a DocumentClient that represents the query to add an item
+const { getDocumentClient } = require('../common/config');
 const tableName = process.env.SAMPLE_TABLE;
-
-// Create a DocumentClient that represents the query to add an item
-//const dynamodb = require('aws-sdk/clients/dynamodb');
-
-
-// const docClient = new dynamodb.DocumentClient();
-import { DynamoDB, Endpoint } from 'aws-sdk';
-
-
-const ddb = new DynamoDB({ apiVersion: '2012-08-10' });
-
-ddb.endpoint = new Endpoint('http://dynamo:8000');
-// if (process.env['AWS_SAM_LOCAL']) {
-//     ddb.endpoint = new Endpoint('http://localhost:8000');
-// } else if ('local' == process.env['APP_STAGE']) {
-//     // Use this when running code directly via node. Much faster iterations than using sam local
-//     ddb.endpoint = new Endpoint('http://localhost:8000');
-// }
-
 
 /**
  * A simple example includes a HTTP get method to get all items from a DynamoDB table.
@@ -38,8 +19,9 @@ exports.getAllItemsHandler = async (event) => {
     var params = {
         TableName : tableName
     };
-    const data = await ddb.scan(params).promise()
-    // const data = await docClient.scan(params).promise();
+    docClient = getDocumentClient();
+    // const data = await getDocumentClient().scan(params).promise()
+    const data = await docClient.scan(params).promise();
     const items = data.Items;
 
     const response = {

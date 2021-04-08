@@ -23,6 +23,11 @@ tasks:
         sam local invoke putItemFunction --event events/event-post-item.json \
         --docker-network backend --skip-pull-image --profile default --env-vars env.json
 
+  get_all_items:
+    cmds:
+      - |
+        sam local invoke getAllItemsFunction --event events/event-get-all-items.json \
+        --docker-network backend --skip-pull-image --profile default --env-vars env.json
   hello_lambda:
     cmds:
       - |

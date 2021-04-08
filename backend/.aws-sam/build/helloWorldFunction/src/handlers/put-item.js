@@ -1,28 +1,6 @@
 // Create clients and set shared const values outside of the handler.
-
-// Create a DocumentClient that represents the query to add an item
-const dynamodb = require('aws-sdk/clients/dynamodb');
-
-
-
-
-const sdk = require('aws-sdk');
-
-const DynamoDB = sdk.DynamoDB;
-const Endpoint = sdk.Endpoint;
-
-
-const ddb = new DynamoDB({ apiVersion: '2012-08-10' });
-ddb.endpoint = new Endpoint('http://dynamo:8000');
-// ddb.endpoint = new Endpoint('http://localhost:8000');
-// if (process.env['AWS_SAM_LOCAL']) {
-//     ddb.endpoint = new Endpoint('http://dynamo:8000');
-// }
-
-const docClient = new dynamodb.DocumentClient({ apiVersion: '2012-08-10', endpoint: 'http://dynamo:8000' });
-    //.DocumentClient({"service": ddb});
-
-// Get the DynamoDB table name from environment variables
+// Get a DocumentClient that represents the query to add an item
+const { getDocumentClient } = require('../common/config');
 const tableName = process.env.SAMPLE_TABLE;
 
 /**
@@ -47,7 +25,8 @@ exports.putItemHandler = async (event, context) => {
         Item: { id : id, name: name }
     };
 
-    // const result = await docClient.put(params).promise();
+    const docClient = getDocumentClient();
+    const result = await docClient.put(params).promise();
 
     let putResult = "NOT_SET";
 
@@ -67,12 +46,13 @@ exports.putItemHandler = async (event, context) => {
         context: context,
         putResult: putResult,
         tableName: tableName,
-        params: params
+        params: params,
+        environment: process.env
     }
 
     const response = {
         statusCode: 200,
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload, null, 2)
     };
 
     // All log statements are written to CloudWatch
