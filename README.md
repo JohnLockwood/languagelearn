@@ -2,7 +2,6 @@
 
 This is the home of code and documentation supporting my English teaching business.  The name of the business is subject to change before launch.
 
-This is yet another test line.
 ## Vision
 
 The current vision is of an English Language Learning site focusing on Spanish-speaking learners.  This was the same vision as in 
