@@ -1,13 +1,19 @@
 # English Teaching Site / Business
 
-# Focus!!!
-
 ## Getting started
+
+This project needs some love.  The 
+
+* Current branch is django, pushing
+
 
 - [ ] TODO write me.
 
 ## TODO
 
+- [ ] Imme
+
+These are older -- do these after we have a clear path forward.
 
 
 ### Model work
