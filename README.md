@@ -4,8 +4,29 @@
 
 This project needs some love.  The 
 
-* Current branch is django, pushing
-* docker has work in progress dockerfile, needs to be reworked with correct [].env file](https://docs.docker.com/compose/env-file/) to match the one in 
+* Current branch is django, 
+
+To set up Postgres and migrations.
+
+TODO:  Add venv step, or consolidate makefile...
+
+1. Add lines like the following to your .profile file, and source it or log in again
+
+```
+export POSTGRES_PASSWORD=Maracuya2019Froyo
+export POSTGRES_USER=pguser_maestro
+export POSTGRES_DB=pgdb_maestro
+```
+
+2. Start database
+```
+cd docker
+make up
+```
+
+3. Run migrations
+cd ..\django_app
+python 
 
 
 - [ ] TODO write me.
