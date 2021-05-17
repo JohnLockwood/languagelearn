@@ -5,6 +5,7 @@
 This project needs some love.  The 
 
 * Current branch is django, pushing
+* docker has work in progress dockerfile, needs to be reworked with correct [].env file](https://docs.docker.com/compose/env-file/) to match the one in 
 
 
 - [ ] TODO write me.
