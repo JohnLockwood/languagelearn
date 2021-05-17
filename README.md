@@ -11,7 +11,8 @@ legacy/maestro-de-ingles but now we are reworking the projected development fram
 ```
 cd frontend
 npm install
-npm run dev```
+npm run dev
+```
 
 ## Architectural constraints:
 
