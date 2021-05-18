@@ -1,9 +1,0 @@
-{
-	"auth": {
-		"languagelearne270fd20": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": []
-		}
-	}
-}
