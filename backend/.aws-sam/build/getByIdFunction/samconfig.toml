@@ -1,9 +1,0 @@
-version = 0.1
-[dev]
-[dev.deploy]
-[dev.deploy.parameters]
-stack_name = "languagelearn-sam"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-jzu9qnz22ayq"
-s3_prefix = "languagelearn-sam"
-region = "us-east-1"
-capabilities = "CAPABILITY_IAM"
