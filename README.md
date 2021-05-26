@@ -57,5 +57,4 @@ These are older -- do these after we have a clear path forward.
 - [x] Minimal Explore Trello, [react-dnd](https://github.com/react-dnd/react-dnd) (including the doc and the chessboard tutorial). 
   [this demo](https://codepen.io/DtCarrot/pen/ZpXNja)
 
-Test git config
-
+Test git config with just personal account active
