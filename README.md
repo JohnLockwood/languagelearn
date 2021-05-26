@@ -26,7 +26,16 @@ cd docker
 make up
 ```
 
-3. Run migrations
+3. Set up venv
+```
+python -m venv venv
+source venv/bin/activate 
+OR 
+venv/scripts/activate.bat
+```
+
+
+4. Run migrations
 cd ..\django_app
 python 
 

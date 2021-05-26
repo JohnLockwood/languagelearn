@@ -1,0 +1,6 @@
+[user]
+  name = John Lockwood
+  email = johnlockwood2999@gmail.com 
+
+[ssh]
+  key = ~/.ssh/id_rsa_personal
