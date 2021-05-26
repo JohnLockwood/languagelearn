@@ -20,24 +20,16 @@ export POSTGRES_USER=pguser_maestro
 export POSTGRES_DB=pgdb_maestro
 ```
 
-2. Start database
+2. Start database and django.
 ```
 cd docker
 make up
 ```
 
-3. Set up venv
-```
-python -m venv venv
-source venv/bin/activate 
-OR 
-venv/scripts/activate.bat
-```
+3. TODO --
 
-
-4. Run migrations
-cd ..\django_app
-python 
+* Add a service user if not one already
+* Get a test container going so can use Pycharm.
 
 
 # Some older architectural constraints -- where should this go? 

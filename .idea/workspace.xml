@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6be61be-177a-4d5c-83d4-2d5ada09b1c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/app/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/django_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/django_app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/learn/templates/learn/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/learn/templates/learn/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +72,7 @@
       <workItem from="1621345762710" duration="1622000" />
       <workItem from="1621425807835" duration="4000" />
       <workItem from="1622054399424" duration="64000" />
-      <workItem from="1622054679542" duration="2567000" />
+      <workItem from="1622054679542" duration="3868000" />
     </task>
     <servers />
   </component>
@@ -108,9 +104,48 @@
       <screen x="-1920" y="342" width="1920" height="1080" />
     </state>
     <state x="-1270" y="479" key="FileChooserDialogImpl/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622054453579" />
+    <state width="927" height="329" key="GridCell.Tab.0.bottom" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.0.bottom/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.0.center" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.0.center/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.0.left" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.0.left/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.0.right" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.0.right/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.1.bottom" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.1.bottom/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.1.center" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.1.center/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.1.left" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.1.left/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
+    <state width="927" height="329" key="GridCell.Tab.1.right" timestamp="1622058053257">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state width="927" height="329" key="GridCell.Tab.1.right/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058053257" />
     <state x="-1687" y="353" key="SettingsEditor" timestamp="1622057973880">
       <screen x="-1920" y="342" width="1920" height="1080" />
     </state>
     <state x="-1687" y="353" key="SettingsEditor/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622057973880" />
+    <state x="-1467" y="342" width="1009" height="1470" key="search.everywhere.popup" timestamp="1622058712063">
+      <screen x="-1920" y="342" width="1920" height="1080" />
+    </state>
+    <state x="-1467" y="342" width="1009" height="1470" key="search.everywhere.popup/1920.0.1707.933/-1920.342.1920.1080/0.0.1920.1040@-1920.342.1920.1080" timestamp="1622058712063" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/languagelearn$pytest_for_test_models_TestBasic_test_can_run_test.coverage" NAME="pytest for test_models.TestBasic.test_can_run_test Coverage Results" MODIFIED="1622057979934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/learn/tests" />
   </component>
 </project>
