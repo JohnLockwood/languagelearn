@@ -26,10 +26,13 @@ cd docker
 make up
 ```
 
-3. TODO --
+3. In order to debug in Pycharm, need to set up python interpreter pointing to docker-compose / web service.
+In run configuration, need environment variables for postgres connection, or better yet, need a way to add to Windows so not in workspace file (currently git rm'ed so not checked in).
+
+4. TODO --
 
 * Add a service user if not one already
-* Get a test container going so can use Pycharm.
+
 
 
 # Some older architectural constraints -- where should this go? 
