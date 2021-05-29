@@ -1,28 +1,27 @@
 <!-- #TODO this should be lang="es" eventually -->
 <html lang="en">
 <head>
-    <title>Maestro-de-ingles?</title>
+    <title>TODO Make title a variable.</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
 </head>
 
 <body>
-<h1>Hello Django!</h1>
+<h1>CursoEnIngles.com</h1>
 <em>This is being served from the "common" app.</em>
-<p>
-    So far what we have going on are some tutorial business:
+
+<h3>The good stuff:</h3>
+<p>In the learn app, we've been playing around with how to load templates to organize pages (See the docs on
+    <a href="https://docs.djangoproject.com/en/3.2/topics/http/urls/">template inheritance</a> and the <a href="https://docs.djangoproject.com/en/3.2/topics/http/urls/">URL dispatcher</a>).
 </p>
 <ul>
-    <li>The default <a href="/admin">admin site</a>, with whatever we add to it.</li>
-    <li>The <a href="{% url 'polls:index' %}">Polls tutorial</a>.</li>
-    <li>For debugging, here's <a href="http://localhost:5050">PGAdmin</a></li>
+    <li>A simple <a href="{% url 'learn:page_one' %}">dynamic page</a> with a hard-coded route to a view.  Too cool for pre-school.</li>
+    <li>A dynamic "/learn/pages" root, loading the slug "hey" at <a href="/learn/page/hey">/learn/page/hey</a>.  Too cool for school.</li>
 </ul>
-
-<h2>The Good Stuff</h2>
-<p>
-    But wait, there's more! There's a new Django App with hardly anything in it -- <a href="{% url 'learn:index' %}">Maestro-De-Ingles</a>
-    or whatever.
-</p>
-
+<h3>The other stuff:</h3>
+<ul>
+    <li>The default <a href="/admin">admin site</a>, with whatever we add to it.</li>
+    <li>For debugging, here's <a href="http://localhost:5050">PGAdmin</a>.  TODO get this working on docker?</li>
+</ul>
 </body>
 </html>

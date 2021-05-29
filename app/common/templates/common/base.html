@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- #TODO this should be lang="es" eventually -->
+<html lang="en">
+<head>
+    <title>{% block title%}TODO get App Title from Var{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+</head>
+
+<body>
+<h1>This is on top</h1>
+<p>This pointless arm-waving goes on every page.  You know it wants to be some links or such.  <a href="{% url "index" %}">Home</a></p>
+<div>
+{% block content%}Put something here{% endblock %}
+</div>
+</body>
+</html>
