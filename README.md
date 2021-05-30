@@ -47,3 +47,8 @@ In run configuration, need environment variables for postgres connection, or bet
 * Must enable web + android + ios.
 
 
+## Notes:
+
+PostCSS was set up according to the tips found here:
+
+https://stackoverflow.com/questions/63392426/how-to-use-tailwindcss-with-django

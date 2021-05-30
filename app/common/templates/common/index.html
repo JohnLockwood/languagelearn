@@ -4,9 +4,11 @@
     <title>TODO Make title a variable.</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static "common/css/tailwind-output.css" %}">
 </head>
 
 <body>
+<div class="container mx-auto">
 <h1>CursoEnIngles.com</h1>
 <em>This is being served from the "common" app.</em>
 
@@ -23,5 +25,6 @@
     <li>The default <a href="/admin">admin site</a>, with whatever we add to it.</li>
     <li>For debugging, here's <a href="http://localhost:5050">PGAdmin</a>.  TODO get this working on docker?</li>
 </ul>
+    </div>
 </body>
 </html>
