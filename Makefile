@@ -1,5 +1,5 @@
 up:
-	env | grep POSTGRES > .env
+	set | grep POSTGRES > .env
 	docker-compose   up -d 
 
 down:

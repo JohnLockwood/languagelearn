@@ -20,7 +20,7 @@ services:
         dockerfile: Dockerfile
     command: /bin/bash
     volumes:
-      - ./app:/app
+     - ./app:/app
 
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}

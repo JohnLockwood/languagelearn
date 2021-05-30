@@ -10,22 +10,21 @@
 
 <body class="pt-8 pr-8 ">
 <header class="flex flex-row items-center content-start">
-        <h1 class="text-3xl ml-0 mr-12 font-bold"><a href="/" class="no-underline">CursoDeIngles</a></h1>
+        <h1 class="text-3xl ml-0 mr-12 font-bold"><a href="/" class="no-underline">CursoEnIngles.com</a></h1>
     <ul class="flex">
   <li class=" ml-2">
-    <a class="text-blue-500 hover:text-blue-800 hover:underline p-3 border-l-2 border-r-2" href="/learn/page/hey">Dynamic page</a>
+    <a class="text-blue-500 hover:text-blue-800 hover:underline p-3 border-l-2 border-r-2" href="/learn/page/hey">Ingles para Principiantes</a>
   </li>
   <li class="ml-2">
-    <a class="text-blue-500 hover:text-blue-800 hover:underline p-3 border-r-2" href="{% url 'learn:page_one' %}">Other page</a>
+    <a class="text-blue-500 hover:text-blue-800 hover:underline p-3 border-r-2" href="{% url 'learn:page_one' %}">Blog</a>
   </li>
 </ul>
 </header>
-    <main class="flex flex-row mt-12 ml-8 mr-8 container">
+    <main class="mt-12 ml-8 mr-8 container">
 {% block content%}Put something here{% endblock %}
 </main>
 <footer class="text-xs text-center mb-4">
-    <span>Copyright 2021 John Lockwood</span>
-
+    <span>Copyright (c) 2021 John Lockwood.  All rights reserved.</span>
 </footer>
 </body>
 </html>

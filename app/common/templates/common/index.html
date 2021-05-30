@@ -1,30 +1,17 @@
 <!-- #TODO this should be lang="es" eventually -->
-<html lang="en">
-<head>
-    <title>TODO Make title a variable.</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'common/css/styles.css' %}">
-    <link rel="stylesheet" href="{% static "common/css/tailwind-output.css" %}">
-</head>
-
-<body>
-<div class="container mx-auto">
-<h1>CursoEnIngles.com</h1>
-<em>This is being served from the "common" app.</em>
-
-<h3>The good stuff:</h3>
-<p>In the learn app, we've been playing around with how to load templates to organize pages (See the docs on
+{% extends "./base.html" %}
+{% block content %}
+<h2>The good stuff:</h2>
+    <p>In the learn app, we've been playing around with how to load templates to organize pages (See the docs on
     <a href="https://docs.djangoproject.com/en/3.2/topics/http/urls/">template inheritance</a> and the <a href="https://docs.djangoproject.com/en/3.2/topics/http/urls/">URL dispatcher</a>).
-</p>
-<ul>
-    <li>A simple <a href="{% url 'learn:page_one' %}">dynamic page</a> with a hard-coded route to a view.  Too cool for pre-school.</li>
-    <li>A dynamic "/learn/page" root, loading the slug "hey" at <a href="/learn/page/hey">/learn/page/hey</a>.  Too cool for school.</li>
+    </p>
+    <p>We've also been tailwind-ing the tar out of this feather.</p>
+
+<h2>The other stuff:</h2>
+
+    <p>The default <a href="/admin">admin site</a>, with whatever we add to it.</p>
+    <p>For debugging, here's <a href="http://localhost:5050">PGAdmin</a>.  TODO get this working on docker?</p>
 </ul>
-<h3>The other stuff:</h3>
-<ul>
-    <li>The default <a href="/admin">admin site</a>, with whatever we add to it.</li>
-    <li>For debugging, here's <a href="http://localhost:5050">PGAdmin</a>.  TODO get this working on docker?</li>
-</ul>
-    </div>
-</body>
+{% endblock %}
+
 </html>
