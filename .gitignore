@@ -34,3 +34,7 @@ secret
 **/.env
 
 .idea
+
+**/.terraform
+**/*.tfstate
+**/*.tfstate.backup
