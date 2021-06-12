@@ -39,7 +39,7 @@ output "ip_address" {
 
 resource "aws_key_pair" "curso_en_ingles" {
   key_name   = "NorthernVirginiaMyEC2KeyPairManaged"
-  public_key = "${file("../secret/NorthernVirginiaMyEC2KeyPair.pub")}"
+  public_key = file("../secret/NorthernVirginiaMyEC2KeyPair.pub")
 }
 
 # TODO Create security group in stack.
@@ -52,6 +52,17 @@ resource "aws_instance" "curso_en_ingles" {
   depends_on =  [
     aws_key_pair.curso_en_ingles
   ]
+
+  user_data = <<EOF
+  #! /bin/bash
+  sudo yum update
+  sudo yum install -y ruby
+  sudo yum install -y wget
+  cd /home/ec2-user
+  wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+  chmod +x ./install
+  sudo ./install auto
+  EOF
 
   ami = "ami-0aeeebd8d2ab47354"
 
