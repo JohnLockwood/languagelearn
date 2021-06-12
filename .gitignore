@@ -39,3 +39,6 @@ secret
 **/*.tfstate
 **/*.tfstate.backup
 **/.terraform.lock.hcl
+**/plan.out
+**/plan.json
+**/out.json

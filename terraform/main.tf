@@ -11,25 +11,19 @@ terraform {
   }
 }
 
-variable db_password {
-    type = string
+data "aws_caller_identity" "current" {}
+
+data "aws_ssm_parameter" "db_user" {
+  name = "/curso_en_ingles/dev_prod/db_user"
 }
 
-variable db_user {
-    type = string
+data "aws_ssm_parameter" "db_password" {
+  name = "/curso_en_ingles/dev_prod/db_password"
 }
 
 # Configure the AWS Provider
 provider "aws" {
   region = "us-east-1"
-}
-
-output "variable_dump_password" {
-  value = var.db_password
-}
-
-output "variable_dump_user" {
-  value = var.db_user
 }
 
 
@@ -47,6 +41,65 @@ resource "aws_network_interface_sg_attachment" "sg_attachment" {
   security_group_id    = "sg-09595b1cce392f53f"
   network_interface_id = aws_instance.curso_en_ingles.primary_network_interface_id
 }
+
+
+resource "aws_iam_instance_profile" "curso_en_ingles" {
+  name = "curso_en_ingles"
+  role = aws_iam_role.curso_en_ingles.name
+}
+
+data "aws_iam_policy_document" "instance-assume-role-policy" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+}
+
+resource "aws_iam_role" "curso_en_ingles" {
+  name = "curso_en_ingles"
+  path = "/"
+  assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
+
+  inline_policy {
+    name = "allow_sms_lookup"
+    
+    policy = jsonencode({
+      Version = "2012-10-17"
+      Statement = [
+        {
+      "Effect": "Allow",
+            "Action": [
+                "ssm:PutParameter",
+                "ssm:DeleteParameter",
+                "ssm:GetParameterHistory",
+                "ssm:GetParametersByPath",
+                "ssm:GetParameters",
+                "ssm:GetParameter",
+                "ssm:DeleteParameters"
+            ],
+            "Resource": "arn:aws:ssm:region:${data.aws_caller_identity.current.account_id}:parameter/curso_en_ingles/dev_prod/*"
+        },
+      ]
+    })
+  }
+}
+
+data "aws_iam_policy_document" "instance_assume_role_policy" {
+  statement {
+    actions = ["sts:AssumeRole"]
+
+    principals {
+      type        = "Service"
+      identifiers = ["ec2.amazonaws.com"]
+    }
+  }
+}
+
+
 
 resource "aws_instance" "curso_en_ingles" {
   depends_on =  [
@@ -72,17 +125,22 @@ resource "aws_instance" "curso_en_ingles" {
     Name = "CursoEnIngles"
   }
 }
-# output "endpoint" {
-#   value = aws_db_instance.llearn_db.endpoint
-# }
 
-# resource "aws_db_instance" "llearn_db" {
-#   allocated_storage    = 10
-#   engine               = "postgres"
-#   engine_version       = "13.2"
-#   instance_class       = "db.t3.micro"
-#   name                 = "llearn_db"
-#   username             = var.db_user
-#   password             = var.db_password
-#   skip_final_snapshot  = true             # For dev only -- should be false later
-# }
+
+output "endpoint" {
+  value = aws_db_instance.llearn_db.endpoint
+}
+
+# WARNING
+# TODO:
+# This leaks user/password to state.  
+resource "aws_db_instance" "llearn_db" {
+  allocated_storage    = 10
+  engine               = "postgres"
+  engine_version       = "13.2"
+  instance_class       = "db.t3.micro"
+  name                 = "llearn_db"
+  username             = data.aws_ssm_parameter.db_user.value
+  password             = data.aws_ssm_parameter.db_password.value
+  skip_final_snapshot  = true             # For dev only -- should be false later
+}
