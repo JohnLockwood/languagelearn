@@ -42,3 +42,4 @@ secret
 **/plan.out
 **/plan.json
 **/out.json
+terraform/login.bat
