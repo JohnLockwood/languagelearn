@@ -141,16 +141,17 @@ resource "aws_instance" "curso_en_ingles" {
 #   value = aws_db_instance.llearn_db.endpoint
 # }
 
-# # WARNING
-# # TODO:
-# # This leaks user/password to state.  
-# resource "aws_db_instance" "llearn_db" {
-#   allocated_storage    = 10
-#   engine               = "postgres"
-#   engine_version       = "13.2"
-#   instance_class       = "db.t3.micro"
-#   name                 = "llearn_db"
-#   username             = data.aws_ssm_parameter.db_user.value
-#   password             = data.aws_ssm_parameter.db_password.value
-#   skip_final_snapshot  = true             # For dev only -- should be false later
-# }
+# WARNING
+# TODO:
+# This leaks user/password to state.  
+resource "aws_db_instance" "llearn_db" {
+  count                = 0
+  allocated_storage    = 10
+  engine               = "postgres"
+  engine_version       = "13.2"
+  instance_class       = "db.t3.micro"
+  name                 = "llearn_db"
+  username             = data.aws_ssm_parameter.db_user.value
+  password             = data.aws_ssm_parameter.db_password.value
+  skip_final_snapshot  = true             # For dev only -- should be false later
+}
