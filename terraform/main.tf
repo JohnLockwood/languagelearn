@@ -63,17 +63,20 @@ resource "aws_iam_role" "curso_en_ingles" {
   name = "curso_en_ingles"
   path = "/"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
-  managed_policy_arns = [aws_iam_policy.get_parameters.arn]
+  managed_policy_arns = [
+    aws_iam_policy.get_parameters.arn, 
+    aws_iam_policy.code_deploy.arn
+    ]
 
 }
 
 resource "aws_iam_policy" "get_parameters" {
   name = "policy-381999"
   policy = jsonencode({
-      Version = "2012-10-17"
+      Version = "2012-10-17",
       Statement = [
         {
-      "Effect": "Allow",
+          "Effect": "Allow",
             "Action": [
                 "ssm:PutParameter",
                 "ssm:DeleteParameter",
@@ -86,11 +89,45 @@ resource "aws_iam_policy" "get_parameters" {
             # 3.239.187.8
             # 363498436337
             "Resource": "*"
-        },
-        
+        }        
       ]
     })
 }
+
+
+resource "aws_iam_policy" "code_deploy" {
+  name = "policy-381100"
+  policy = jsonencode({
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*",
+        "s3:List*"
+      ],
+      "Resource": [
+        "*"
+        # "arn:aws:s3:::aws-codedeploy-us-east-2/*",
+        # "arn:aws:s3:::aws-codedeploy-us-east-1/*",
+        # "arn:aws:s3:::aws-codedeploy-us-west-1/*",
+        # "arn:aws:s3:::aws-codedeploy-us-west-2/*",
+        # "arn:aws:s3:::aws-codedeploy-ca-central-1/*",
+        # "arn:aws:s3:::aws-codedeploy-eu-west-1/*",
+        # "arn:aws:s3:::aws-codedeploy-eu-west-2/*",
+        # "arn:aws:s3:::aws-codedeploy-eu-west-3/*",
+        # "arn:aws:s3:::aws-codedeploy-eu-central-1/*",
+        # "arn:aws:s3:::aws-codedeploy-ap-east-1/*",
+        # "arn:aws:s3:::aws-codedeploy-ap-northeast-1/*",
+        # "arn:aws:s3:::aws-codedeploy-ap-northeast-2/*",
+        # "arn:aws:s3:::aws-codedeploy-ap-southeast-1/*",        
+        # "arn:aws:s3:::aws-codedeploy-ap-southeast-2/*",
+        # "arn:aws:s3:::aws-codedeploy-ap-south-1/*",
+        # "arn:aws:s3:::aws-codedeploy-sa-east-1/*"
+      ]}
+  ]})
+  }
+
 
 data "aws_iam_policy_document" "instance_assume_role_policy" {
   statement {
