@@ -154,6 +154,7 @@ resource "aws_instance" "curso_en_ingles" {
   sudo yum update
   sudo yum install -y ruby
   sudo yum install -y wget
+  sudo yum install -y jq
   cd /home/ec2-user
   wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
   chmod +x ./install
@@ -182,7 +183,7 @@ resource "aws_instance" "curso_en_ingles" {
 # TODO:
 # This leaks user/password to state.  
 resource "aws_db_instance" "llearn_db" {
-  count                = 0
+  # count                = 0
   allocated_storage    = 10
   engine               = "postgres"
   engine_version       = "13.2"
