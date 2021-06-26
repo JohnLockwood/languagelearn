@@ -3,3 +3,13 @@ os: linux
 files:
   - source: /
     destination: /
+hooks: 
+  ApplicationStop:
+    - location: tools/stop_server.sh
+      timeout: 10
+      runas: root
+  ApplicationStart:
+    - location: tools/start_server.sh
+      timeout: 10
+      runas: root
+

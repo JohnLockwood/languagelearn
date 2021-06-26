@@ -1,0 +1,1 @@
+echo "Stopping server (not really) GOODBYE WORLD"
