@@ -24,10 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '776**%0*uqu#5it=i=lhd%g&tae=#c#2%lf!zx**@01(b-_!&x'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# JCL TODO SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# JCL TODO change once we have DNS set up 
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,10 +87,6 @@ DATABASES = {
       'PASSWORD': os.environ['POSTGRES_PASSWORD'],
       'HOST': os.environ['POSTGRES_HOST'],
       'PORT': '5432'
-    },
-    'original': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
