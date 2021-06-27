@@ -1,4 +1,5 @@
 #! /bin/bash
+echo what a mess.
 sudo yum update
 sudo yum install -y ruby
 sudo yum install -y wget
