@@ -17,7 +17,7 @@ cd /app/app
 export DJANGO_SETTINGS_MODULE=django_app.settings
 pip3 install -t "." -r requirements.txt
 python3 -m django migrate
-python3 -m gunicorn django_app.wsgi
-python3 -m django runserver 0.0.0.0:80 &
+python3 -m gunicorn django_app.wsgi & 
+
 
 
