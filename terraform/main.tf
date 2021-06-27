@@ -149,21 +149,7 @@ resource "aws_instance" "curso_en_ingles" {
 
   iam_instance_profile = aws_iam_instance_profile.curso_en_ingles.id
 
-  user_data = <<EOF
-  #! /bin/bash
-  sudo yum update
-  sudo yum install -y ruby
-  sudo yum install -y wget
-  sudo yum install -y jq
-  cd /home/ec2-user
-  wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
-  chmod +x ./install
-  sudo ./install auto  
-  mkdir -p .aws
-  echo [default] > .aws/config
-  echo region = us-east-1 >> .aws/config
-  sudo chown -R  ec2-user:ec2-user .aws
-  EOF
+  user_data = templatefile("userdata.sh", {db_host = aws_db_instance.llearn_db.endpoint})
 
   ami = "ami-0aeeebd8d2ab47354"
 
@@ -175,9 +161,9 @@ resource "aws_instance" "curso_en_ingles" {
 }
 
 
-# output "endpoint" {
-#   value = aws_db_instance.llearn_db.endpoint
-# }
+output "endpoint" {
+  value = aws_db_instance.llearn_db.endpoint
+}
 
 # WARNING
 # TODO:
