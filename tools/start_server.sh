@@ -18,7 +18,7 @@ export DJANGO_SETTINGS_MODULE=django_app.settings
 pip3 install -t "." -r requirements.txt
 python3 -m django migrate
 python3 manage.py collectstatic --noinput
-python3 -m gunicorn -b 0.0.0.0:80  django_app.wsgi & 
+python3 -m gunicorn -b 0.0.0.0:80  django_app.wsgi --daemon
 
 
 
