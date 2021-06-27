@@ -1,2 +1,3 @@
 echo "Stopping server..."
-true || lsof -t -i tcp:8000 | xargs kill -9
+true || lsof -t -i tcp:80 | xargs kill -9
+echo "Server stopped"
