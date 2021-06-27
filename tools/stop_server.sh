@@ -1,1 +1,2 @@
-echo "Stopping server (not really) GOODBYE WORLD"
+echo "Stopping server..."
+lsof -t -i tcp:8000 | xargs kill -9
