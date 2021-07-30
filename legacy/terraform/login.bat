@@ -1,0 +1,1 @@
+ssh -i C:\users\codes\NorthernVirginiaMyEC2KeyPair.pem ec2-user@54.237.3.94

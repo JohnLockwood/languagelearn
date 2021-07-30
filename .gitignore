@@ -27,7 +27,7 @@ yarn-error.log*
 media
 **/venv
 .task/
-secret
+**/secret
 **/*.pyc
 **/__pycache__
 **/db.sqlite3

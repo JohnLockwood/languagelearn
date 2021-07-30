@@ -1,54 +1,24 @@
-# LanguageLearn.pro
+# LanguageLearn (or what have you)
 
-This is the home of code and documentation supporting my English teaching business.  The name of the business is subject to change before launch.
+## Architectural choices:
 
-## Vision
+### Language
 
-The current vision is of an English Language Learning site focusing on Spanish-speaking learners.  
+Typescript everywhere.
 
-## Getting started
+### Back end
 
-To set up Postgres and migrations.
+We have made the decision to move everything to Google, because it's generally better than AWS for developer experience.
+AWS Translate is somewhat cheaper, but both get "The event takes place" wrong in Spanish.  
 
-TODO:  Add venv step, or consolidate makefile...
+* For static rendering and for APIs:  Express running in a Google function.
+* Database:  Firestore
+* Authentication: Google Firebase
 
-1. Add lines like the following to your .profile file, and source it or log in again
+### Front end
 
-```
-export POSTGRES_PASSWORD=Maracuya2019Froyo
-export POSTGRES_USER=pguser_maestro
-export POSTGRES_DB=pgdb_maestro
-```
-
-2. Start database and django.
-```
-cd docker
-make up
-```
-
-3. In order to debug in Pycharm, need to set up python interpreter pointing to docker-compose / web service.
-In run configuration, need environment variables for postgres connection, or better yet, need a way to add to Windows so not in workspace file (currently git rm'ed so not checked in).
-
-4. TODO --
-
-* Add a service user if not one already
-
-
-
-# Some older architectural constraints -- where should this go? 
-
-* Lesson authoring should be simple, ideally an editor or similar + audacity.
-* Authentication needs to be cheap and easy to do.
-* Must support SEO well -- high static content
-* Must be tech I want to use (could also go for next category?)
-* Should be less than $100 / month for the first three years.
-* Must be beautiful
-* Must be interactive
-* Must enable web + android + ios.
-
-
-## Notes:
-
-PostCSS was set up according to the tips found here:
-
-https://stackoverflow.com/questions/63392426/how-to-use-tailwindcss-with-django
+* React 
+* We will not do server side rendering in React, instead we'll just use it to handle interactions on the page.  Site will be served generally from express, with caching using browser and CDN (https://firebase.google.com/docs/hosting/manage-cache).  
+* Media, JS, and other static resources can be served from Google File Storage.
+* ReactNative if needed for mobile.
+* CSS Framework: TBD.  Probably Tailwind?
