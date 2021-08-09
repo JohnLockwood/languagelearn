@@ -1,0 +1,28 @@
+{
+  "name": "browser",
+  "version": "1.0.0",
+  "description": "Front end work for languagelearn",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node src/index.js",
+    "start": "concurrently \"npm run watch:css\"  \"npm run serve\"",
+    "watch:css": "watch \"npm run build:css\" src/public/stylesheets",
+    "build:css": "npx postcss src/public/stylesheets/tailwind.css -o src/public/stylesheets/style.css"
+  },
+  "author": "John Lockwood",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "concurrently": "^6.2.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-nunjucks": "^2.2.5",
+    "nunjucks": "^3.2.3"
+  }
+}
