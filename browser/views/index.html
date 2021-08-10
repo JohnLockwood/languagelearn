@@ -2,69 +2,86 @@
 <head>
     <title>Hello, world.</title>
     <link rel="stylesheet" href="/static/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/cfc3d47175.js" crossorigin="anonymous"></script>
 </head>
 <body >
 <div class="container mx-auto lg:px-8 sm:py-2 lg:py-8 ">
 
 <h1>Hello, world.</h1>
-<p>Tailwind and alpine and styles, oh my!?</p>
+<p>Tailwind and alpine and styles, oh my!</p>
 </div>
-<div class="bg-gray-100 flex">
-    <div class="container flex justify-center mx-auto">
-        <div class="py-4">
-            <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+<div class="bg-gray-100 flex justify-center mx-auto ">
+    <div class="flex justify-center w-max">
+        <div class="py-4 w-max">
+            <div class="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg w-max flex-grow">
 
-                <div class="py-4 px-6 rounded-xl bg-white">
-                    <h1 class="text-gray-700 font-bold text-xl mb-3 hover:text-gray-900 hover:cursor-pointer">Hi how are you?</h1>
-                    <p class="pb-2 text-gray-700 tracking-wide">Hola, como esta?</p>
+                <div class="py-4 px-4 rounded-xl bg-white ">
+                    <h1 class="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">Hi how are you?</h1>
+                    <p class="pb-2 text-gray-700 tracking-wide">Hola, cómo estás?</p>
+                    <div class="pb-40 display:block">
+                        <button class="text-xs  py-1 px-3  rounded w-1/8 hover:bg-green-600 bg-green-500 text-white">
+                            <icon class="far fa-play-circle"></icon>&nbsp;Escuche
+                        </button>
+                        <p>&nbsp;</p>
+                    <div>
+
                     <!-- <button class="mt-6 py-2 px-4 bg-yellow-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Buy Now</button> -->
 
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded w-1/7">
-                            Muy difícil
+                    <!--
+                    <div>
+                        <button class="text-xs bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-3 rounded w-1/7">
+                            <i class="far fa-frown">&nbsp</i>&nbsp;Muy difícil
                         </button>
-                        <button class="bg-yellow-700 hover:bg-yellow-500 text-white font-bold py-2 px-5 rounded w-1/7">
+                        <button class="text-xs bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-5 rounded w-1/7">
                             Difícil
                         </button>
 
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded w-1/7">
+                        <button class="text-xs bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-5 rounded w-1/7">
                             Medio
                         </button>
 
-                        <button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-5 rounded w-1/7">
+                        <button class="text-xs bg-green-600 hover:bg-green-400 text-white font-bold py-2 px-5 rounded w-1/7">
+
                             Fácil
                         </button>
 
-                        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 rounded px-3 w-1/7">
-                            Muy fácil
-                        </button>
+                        <button class="text-xs bg-green-500 hover:bg-green-300 text-white font-bold py-2 rounded px-3 w-1/7">
+                            <i class="far fa-smile"></i>&nbsp;Muy fácil
 
+                        </button>
+                    </div>
+                    -->
+                    <div>
+                    <button class="text-xs hover:bg-blue-600 bg-blue-500 text-white font-bold py-2 px-3 rounded w-1/7">
+                        <i class="far fa-frown">&nbsp</i>&nbsp;Muy difícil
+                    </button>
+                    <button class="text-xs  hover:bg-blue-600 bg-blue-500 text-white font-bold py-2 px-5 rounded w-1/7">
+                        Difícil
+                    </button>
+
+                    <button class="text-xs  hover:bg-blue-600 bg-blue-500 text-white font-bold py-2 px-5 rounded w-1/7">
+                        Medio
+                    </button>
+
+                    <button class="text-xs  hover:bg-blue-600 bg-blue-500  text-white font-bold py-2 px-5 rounded w-1/7">
+
+                        Fácil
+                    </button>
+
+                    <button class="text-xs  hover:bg-blue-600 bg-blue-500  text-white font-bold py-2 rounded px-3 w-1/7">
+                        <i class="far fa-smile"></i>&nbsp;Muy fácil
+
+                    </button>
                 </div>
+
+
+            </div>
 
             </div>
         </div>
     </div>
 </div>
 
-    <div class="container mx-auto pt-3 ">
-        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded w-1/6">
-            1. Muy difícil
-        </button>
-        <button class="bg-yellow-700 hover:bg-yellow-500 text-white font-bold py-2 px-3 rounded w-1/6">
-            2. Difícil
-        </button>
-
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 rounded w-1/6">
-            3. Medio
-        </button>
-
-        <button class="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-3 rounded w-1/6">
-            4. Fácil
-        </button>
-
-        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 rounded px-3 w-1/6">
-            5. Muy fácil
-        </button>
-    </div>
 </div>
 </body>
 </html>
